@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StanwayTutoring</title>
+<style>
+  :root{
+    --navy:#0f1f3d;
+    --navy-light:#1b3461;
+    --gold:#c9a44c;
+    --gold-light:#e3c878;
+    --bg:#f7f8fb;
+    --text:#1f2433;
+    --muted:#5b6378;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+  }
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+  a{text-decoration:none;}
+
+  /* Header */
+  header{
+    background:var(--navy);
+    color:#fff;
+    padding:18px 0;
+    position:sticky;
+    top:0;
+    z-index:50;
+    box-shadow:0 2px 12px rgba(0,0,0,0.15);
+  }
+  header .container{display:flex;justify-content:space-between;align-items:center;}
+  .logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:0.5px;
+  }
+  .logo span{color:var(--gold-light);}
+  .btn{
+    display:inline-block;
+    padding:12px 26px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.25s ease;
+    border:none;
+    font-size:15px;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:var(--navy);
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(201,164,76,0.4);
+  }
+  .btn-outline{
+    background:transparent;
+    color:#fff;
+    border:1.5px solid rgba(255,255,255,0.5);
+    padding:10px 22px;
+  }
+  .btn-outline:hover{
+    background:rgba(255,255,255,0.1);
+  }
+
+  /* Hero */
+  .hero{
+    background:radial-gradient(circle at top right, var(--navy-light), var(--navy) 70%);
+    color:#fff;
+    padding:90px 0 100px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-100px;left:50%;
+    transform:translateX(-50%);
+    width:140%;
+    height:200px;
+    background:var(--bg);
+    border-radius:50%;
+  }
+  .hero-content{position:relative;z-index:2;}
+  .badge{
+    display:inline-block;
+    background:rgba(201,164,76,0.15);
+    color:var(--gold-light);
+    border:1px solid rgba(201,164,76,0.4);
+    padding:6px 16px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.5px;
+    margin-bottom:24px;
+  }
+  .hero h1{
+    font-size:46px;
+    font-weight:800;
+    max-width:800px;
+    margin:0 auto 18px;
+    line-height:1.2;
+  }
+  .hero h1 .accent{color:var(--gold-light);}
+  .hero p.subtext{
+    font-size:19px;
+    color:rgba(255,255,255,0.85);
+    max-width:620px;
+    margin:0 auto 36px;
+  }
+  .hero-cta{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+  }
+  .flex-pill{
+    margin-top:6px;
+    font-size:14px;
+    color:rgba(255,255,255,0.7);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .flex-pill::before{
+    content:"✓";
+    color:var(--gold-light);
+    font-weight:700;
+  }
+
+  /* Sections general */
+  section{padding:80px 0;}
+  #expect{padding-top:40px;}
+  .section-title{
+    text-align:center;
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:12px;
+    color:var(--navy);
+  }
+  .section-subtitle{
+    text-align:center;
+    color:var(--muted);
+    font-size:17px;
+    max-width:600px;
+    margin:0 auto 50px;
+  }
+
+  /* What to expect */
+  .expect-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+  }
+  .expect-card{
+    background:#fff;
+    border-radius:14px;
+    padding:28px 26px;
+    box-shadow:0 4px 18px rgba(15,31,61,0.06);
+    border:1px solid #ececf3;
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .expect-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 28px rgba(15,31,61,0.12);
+  }
+  .expect-icon{
+    width:46px;height:46px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--navy),var(--navy-light));
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold-light);
+    font-size:20px;
+    margin-bottom:16px;
+  }
+  .expect-card h3{
+    font-size:17px;
+    margin-bottom:8px;
+    color:var(--navy);
+  }
+  .expect-card p{
+    font-size:14.5px;
+    color:var(--muted);
+  }
+
+  /* Pricing */
+  .pricing-section{
+    background:var(--navy);
+    color:#fff;
+  }
+  .pricing-section .section-title, .pricing-section .section-subtitle{color:#fff;}
+  .pricing-section .section-subtitle{color:rgba(255,255,255,0.75);}
+  .limited-banner{
+    text-align:center;
+    background:rgba(201,164,76,0.15);
+    border:1px solid rgba(201,164,76,0.4);
+    color:var(--gold-light);
+    max-width:480px;
+    margin:0 auto 40px;
+    padding:10px 20px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+  }
+  .pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .price-card{
+    background:#fff;
+    color:var(--text);
+    border-radius:18px;
+    padding:36px 30px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 14px 40px rgba(0,0,0,0.25);
+  }
+  .price-card.featured{
+    border:2px solid var(--gold);
+  }
+  .price-tag{
+    position:absolute;
+    top:-14px;left:50%;
+    transform:translateX(-50%);
+    background:var(--gold);
+    color:var(--navy);
+    font-size:12px;
+    font-weight:700;
+    padding:5px 14px;
+    border-radius:20px;
+    letter-spacing:0.5px;
+  }
+  .price-card h3{
+    font-size:20px;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  .price-card .price{
+    font-size:42px;
+    font-weight:800;
+    color:var(--navy);
+    margin:14px 0 2px;
+  }
+  .price-card .price span{
+    font-size:15px;
+    font-weight:500;
+    color:var(--muted);
+  }
+  .price-card .desc{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:24px;
+  }
+  .price-card ul{
+    list-style:none;
+    text-align:left;
+    margin-bottom:26px;
+  }
+  .price-card ul li{
+    font-size:14.5px;
+    color:var(--text);
+    padding:6px 0;
+    padding-left:24px;
+    position:relative;
+  }
+  .price-card ul li::before{
+    content:"✓";
+    position:absolute;left:0;
+    color:var(--gold);
+    font-weight:700;
+  }
+  .price-card .btn-primary{width:100%;text-align:center;}
+
+  /* Testimonials */
+  .testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:24px;
+  }
+  .testimonial-card{
+    background:#fff;
+    border-radius:14px;
+    padding:30px;
+    border:1px dashed #d7d9e3;
+    color:var(--muted);
+    font-style:italic;
+    min-height:140px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  .testimonial-card .quote-icon{
+    font-size:30px;
+    color:var(--gold);
+    margin-bottom:10px;
+    font-style:normal;
+  }
+
+  /* Why tutoring section */
+  .why-section{
+    background:#fff;
+  }
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+  }
+  .why-points{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+  .why-point{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .why-point .num{
+    flex-shrink:0;
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--navy);
+    color:var(--gold-light);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;
+  }
+  .why-point p{
+    color:var(--text);
+    font-size:15.5px;
+  }
+  .why-point strong{color:var(--navy);}
+  .why-cta-box{
+    background:linear-gradient(135deg,var(--navy),var(--navy-light));
+    color:#fff;
+    border-radius:18px;
+    padding:40px 34px;
+    text-align:center;
+  }
+  .why-cta-box h3{
+    font-size:23px;
+    margin-bottom:12px;
+  }
+  .why-cta-box p{
+    color:rgba(255,255,255,0.8);
+    margin-bottom:24px;
+    font-size:15px;
+  }
+
+  /* Booking section */
+  .booking-section{
+    background:var(--bg);
+    text-align:center;
+  }
+  .calendly-wrap{
+    max-width:900px;
+    margin:0 auto;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 14px 50px rgba(15,31,61,0.12);
+    border:1px solid #ececf3;
+  }
+  .calendly-inline-widget{
+    min-width:280px;
+    height:680px;
+  }
+
+  /* About */
+  .about-section{
+    background:#fff;
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:50px;
+    align-items:center;
+  }
+  .photo-slot{
+    width:100%;
+    aspect-ratio:1/1;
+    border-radius:18px;
+    background:linear-gradient(135deg,#eceef5,#dde1ec);
+    border:2px dashed #c3c8d6;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:var(--muted);
+    font-size:14px;
+    text-align:center;
+    gap:8px;
+  }
+  .photo-slot .icon{font-size:34px;}
+  .about-text h3{
+    font-size:26px;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  .about-text .role{
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:18px;
+    font-size:15px;
+  }
+  .about-text p{
+    color:var(--text);
+    font-size:15.5px;
+    margin-bottom:16px;
+  }
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--navy);
+    color:#fff;
+    text-align:center;
+    padding:80px 0;
+  }
+  .final-cta h2{
+    font-size:32px;
+    margin-bottom:14px;
+  }
+  .final-cta p{
+    color:rgba(255,255,255,0.8);
+    margin-bottom:30px;
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  footer{
+    background:#0a1530;
+    color:rgba(255,255,255,0.5);
+    text-align:center;
+    padding:26px 0;
+    font-size:13px;
+  }
+
+  @media(max-width:760px){
+    .hero h1{font-size:32px;}
+    .why-grid, .about-grid{grid-template-columns:1fr;}
+    .about-grid{text-align:center;}
+    .photo-slot{max-width:240px;margin:0 auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">Stanway<span>Tutoring</span></div>
+    <a href="#booking" class="btn btn-outline">Book a Free Consultation</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <span class="badge">SUMMER 2026 COHORT NOW OPEN</span>
+    <h1>Walk into September with the <span class="accent">confidence</span> and knowledge to achieve the grades you need</h1>
+    <p class="subtext">Individually tailored, one-to-one tutoring for students going into Year 11 and Year 13. A structured programme designed to build a genuine understanding of maths, targeted towards your exam board.</p>
+    <div class="hero-cta">
+      <a href="#booking" class="btn btn-primary">Book Your Free 15 Minute Consultation</a>
+      <div class="flex-pill">12 completely flexible online sessions, fitted around your schedule</div>
+    </div>
+  </div>
+</section>
+
+<section id="expect">
+  <div class="container">
+    <h2 class="section-title">What to Expect</h2>
+    <p class="section-subtitle">A structured 12-session programme designed to build genuine understanding, not just quick fixes.</p>
+    <div class="expect-grid">
+      <div class="expect-card">
+        <div class="expect-icon">⏱</div>
+        <h3>12 Hours of Focused Sessions</h3>
+        <p>One-to-one time entirely dedicated to closing gaps and building exam technique.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon">📊</div>
+        <h3>Progress Tracking &amp; Diagnostics</h3>
+        <p>Early diagnostics identify exactly where to focus, with progress measured throughout.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon">📩</div>
+        <h3>Frequent Reports</h3>
+        <p>Regular updates so, as parents, you are aware of the progress being made and the next steps.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon">📝</div>
+        <h3>Exam Feedback</h3>
+        <p>Detailed, actionable feedback on practice papers and exam-style answers.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon">✅</div>
+        <h3>Topic Confidence Checklist</h3>
+        <p>A clear, visual breakdown of strong topics and areas still needing attention.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon">📦</div>
+        <h3>Personalised Resource Packs</h3>
+        <p>Tailored notes and practice materials built around each student's specification and areas that need improvement.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon">🎯</div>
+        <h3>Final Review &amp; September Action Plan</h3>
+        <p>A wrap-up session and clear plan so momentum carries straight into the new term.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <h2 class="section-title">Simple, Transparent Pricing</h2>
+    <p class="section-subtitle">One package. Twelve sessions. Everything included.</p>
+    <div class="limited-banner">⚡ Summer spots are limited — early booking secures your preferred schedule</div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>GCSE (Year 11)</h3>
+        <div class="price">£300 <span>/ 12 sessions</span></div>
+        <p class="desc">Full programme for students heading into Year 11</p>
+        <ul>
+          <li>12 hours of 1-to-1 tutoring</li>
+          <li>Diagnostics &amp; progress tracking</li>
+          <li>Frequent parent reports</li>
+          <li>Exam feedback &amp; resource packs</li>
+          <li>September action plan</li>
+        </ul>
+        <a href="#booking" class="btn btn-primary">Book a Free Consultation</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-tag">A-LEVEL</div>
+        <h3>A Level (Year 13)</h3>
+        <div class="price">£420 <span>/ 12 sessions</span></div>
+        <p class="desc">Full programme for students heading into Year 13</p>
+        <ul>
+          <li>12 hours of 1-to-1 tutoring</li>
+          <li>Diagnostics &amp; progress tracking</li>
+          <li>Frequent parent reports</li>
+          <li>Exam feedback &amp; resource packs</li>
+          <li>September action plan</li>
+        </ul>
+        <a href="#booking" class="btn btn-primary">Book a Free Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <h2 class="section-title">What Parents Are Saying</h2>
+    <p class="section-subtitle">Real feedback from families we've worked with.</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p>Testimonial coming soon</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p>Testimonial coming soon</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p>Testimonial coming soon</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container">
+    <h2 class="section-title">Why You Should Prioritise Building Strong Understanding Now, Not Later</h2>
+    <p class="section-subtitle">The earlier the foundations are in place, the easier the rest of the year becomes.</p>
+    <div class="why-grid">
+      <div class="why-points">
+        <div class="why-point">
+          <div class="num">1</div>
+          <p><strong>School terms move fast.</strong> Once term starts, there's little time to go back and cover topics that weren't fully grasped the first time around.</p>
+        </div>
+        <div class="why-point">
+          <div class="num">2</div>
+          <p><strong>Predicted grades are set early.</strong> Ensure that your child is in a position where their predicted grades allow them to apply for their dream university.</p>
+        </div>
+        <div class="why-point">
+          <div class="num">3</div>
+          <p><strong>Catching up is much easier before term starts.</strong> Fast deadlines and new content makes catching up on lost ground seem impossible.</p>
+        </div>
+      </div>
+      <div class="why-cta-box">
+        <h3>Give them the head start they need</h3>
+        <p>A free 15-minute call is all it takes to put a plan in place before September.</p>
+        <a href="#booking" class="btn btn-primary">Book Your Free Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking-section" id="booking">
+  <div class="container">
+    <h2 class="section-title">Book Your Free 15 Minute Consultation</h2>
+    <p class="section-subtitle">Pick a time that works for you — no commitment required. We'll talk through your child's needs and how the programme can help.</p>
+    <div class="calendly-wrap">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/stanwaytutoring1/new-meeting" style="min-width:280px;height:680px;"></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="photo-slot">
+        <img src="REPLACE_WITH_YOUR_PHOTO_URL" alt="John" style="width:100%;height:100%;object-fit:cover;border-radius:16px;display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div style="display:none;flex-direction:column;align-items:center;gap:8px;">
+          <div class="icon">📷</div>
+          <div>Photo of John<br>(insert here)</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3>John</h3>
+        <p>My name is John, I study Maths and Economics at the University of Nottingham and I am a tutor specialised in boosting the exam results of students aged 14–18.</p>
+        <p>At the end of my Year 12, my predicted grades were below the offer I needed for university. However, once I realised how to study efficiently and effectively, I ended up achieving 4 A*s in Maths, Further Maths, English and Geography, and I got into my first-choice university.</p>
+        <p>I started StanwayTutoring to help students develop a strong understanding of mathematical concepts which can then combine with these exam techniques and study methods.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Spots for the summer are limited</h2>
+    <p>Secure your child's place now and head into September with a clear plan and real confidence.</p>
+    <a href="#booking" class="btn btn-primary">Book Your Free 15 Minute Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 StanwayTutoring. All rights reserved.
+  </div>
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+</body>
+</html>
