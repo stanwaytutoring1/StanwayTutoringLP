@@ -3,644 +3,590 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StanwayTutoring</title>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DKXVP6YL01"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DKXVP6YL01');
-</script>
-   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2630137644170005');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2630137644170005&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<title>Stanway Tutoring — 1 to 1 Maths Intensive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0f1f3d;
-    --navy-light:#1b3461;
-    --gold:#c9a44c;
-    --gold-light:#e3c878;
-    --bg:#f7f8fb;
-    --text:#1f2433;
-    --muted:#5b6378;
+    --navy:#12193A;
+    --navy-2:#1B2447;
+    --cream:#F6F3EC;
+    --white:#FFFFFF;
+    --gold:#C0973B;
+    --gold-light:#E4C88A;
+    --ink:#1E2333;
+    --muted:#666F82;
+    --muted-light:#9AA1B5;
+    --line:rgba(255,255,255,0.12);
+    --line-dark:rgba(18,25,58,0.1);
+    --radius:18px;
+    --maxw:1100px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
   body{
-    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
-  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
-  a{text-decoration:none;}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
 
-  /* Header */
-  header{
+  /* Grid texture signature element */
+  .grid-texture{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size:34px 34px;
+    pointer-events:none;
+  }
+  .grid-texture.dark-on-light{
+    background-image:
+      linear-gradient(rgba(18,25,58,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(18,25,58,0.05) 1px, transparent 1px);
+  }
+
+  /* ===== NAV ===== */
+  .topbar{
+    position:sticky;top:0;z-index:100;
     background:var(--navy);
-    color:#fff;
-    padding:18px 0;
-    position:sticky;
-    top:0;
-    z-index:50;
-    box-shadow:0 2px 12px rgba(0,0,0,0.15);
+    border-bottom:1px solid var(--line);
   }
-  header .container{display:flex;justify-content:space-between;align-items:center;}
-  .logo{
-    font-size:22px;
-    font-weight:700;
-    letter-spacing:0.5px;
+  .topbar-inner{
+    max-width:var(--maxw);margin:0 auto;padding:16px 20px 0;
   }
-  .logo span{color:var(--gold-light);}
-  .btn{
-    display:inline-block;
-    padding:12px 26px;
-    border-radius:30px;
-    font-weight:600;
-    cursor:pointer;
-    transition:all 0.25s ease;
-    border:none;
-    font-size:15px;
+  .brand-row{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;}
+  .brand{
+    font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--white);
+    letter-spacing:0.2px;
   }
-  .btn-primary{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
-    color:var(--navy);
+  .brand span{color:var(--gold);}
+  .brand-cta{
+    display:none;
+    font-size:13px;font-weight:600;color:var(--navy);
+    background:var(--gold-light);padding:9px 16px;border-radius:100px;
   }
-  .btn-primary:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 20px rgba(201,164,76,0.4);
+  .tabs{
+    display:flex;gap:4px;overflow-x:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    padding-bottom:0;
   }
-  .btn-outline{
-    background:transparent;
-    color:#fff;
-    border:1.5px solid rgba(255,255,255,0.5);
-    padding:10px 22px;
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{
+    flex:0 0 auto;
+    font-size:13.5px;font-weight:500;color:var(--muted-light);
+    padding:10px 14px;white-space:nowrap;
+    border-bottom:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
   }
-  .btn-outline:hover{
-    background:rgba(255,255,255,0.1);
-  }
+  .tab:hover{color:var(--white);}
+  .tab.active{color:var(--white);border-bottom-color:var(--gold);}
 
-  /* Hero */
+  /* ===== BUTTONS ===== */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:15px;
+    padding:14px 24px;border-radius:100px;
+    border:1px solid transparent;cursor:pointer;
+    transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-gold{background:var(--gold-light);color:var(--navy);}
+  .btn-outline-light{border-color:var(--line);color:var(--white);}
+  .btn-navy{background:var(--navy);color:var(--white);}
+  .btn-block{width:100%;}
+
+  /* ===== HERO ===== */
   .hero{
-    background:radial-gradient(circle at top right, var(--navy-light), var(--navy) 70%);
-    color:#fff;
-    padding:90px 0 100px;
-    text-align:center;
     position:relative;
+    background:var(--navy);
+    color:var(--white);
+    padding:52px 0 44px;
     overflow:hidden;
   }
-  .hero::after{
-    content:"";
-    position:absolute;
-    bottom:-100px;left:50%;
-    transform:translateX(-50%);
-    width:140%;
-    height:200px;
-    background:var(--bg);
-    border-radius:50%;
-  }
-  .hero-content{position:relative;z-index:2;}
-  .badge{
-    display:inline-block;
-    background:rgba(201,164,76,0.15);
-    color:var(--gold-light);
-    border:1px solid rgba(201,164,76,0.4);
-    padding:6px 16px;
-    border-radius:20px;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:0.5px;
-    margin-bottom:24px;
+  .hero-inner{position:relative;z-index:1;}
+  .eyebrow{
+    font-size:12px;font-weight:700;letter-spacing:1.6px;
+    color:var(--gold-light);text-transform:uppercase;margin-bottom:16px;
   }
   .hero h1{
-    font-size:46px;
-    font-weight:800;
-    max-width:800px;
-    margin:0 auto 18px;
-    line-height:1.2;
+    font-size:clamp(34px, 8vw, 48px);
+    line-height:1.08;font-weight:600;
+    margin-bottom:18px;
   }
-  .hero h1 .accent{color:var(--gold-light);}
-  .hero p.subtext{
-    font-size:19px;
-    color:rgba(255,255,255,0.85);
-    max-width:620px;
-    margin:0 auto 36px;
+  .hero h1 em{
+    font-style:italic;font-weight:500;color:var(--gold-light);
   }
-  .hero-cta{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:14px;
+  .hero p.lead{
+    font-size:16.5px;line-height:1.6;color:var(--muted-light);
+    max-width:480px;margin-bottom:28px;
   }
-  .flex-pill{
-    margin-top:6px;
-    font-size:14px;
-    color:rgba(255,255,255,0.7);
-    display:flex;
-    align-items:center;
-    gap:8px;
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
+  .stat-row{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);padding-top:24px;gap:12px;
   }
-  .flex-pill::before{
-    content:"✓";
-    color:var(--gold-light);
-    font-weight:700;
-  }
+  .stat-row .num{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--white);line-height:1.15;}
+  .stat-row .lbl{font-size:12.5px;color:var(--muted-light);margin-top:4px;line-height:1.35;}
 
-  /* Sections general */
-  section{padding:80px 0;}
-  #expect{padding-top:40px;}
-  .section-title{
-    text-align:center;
-    font-size:34px;
-    font-weight:800;
-    margin-bottom:12px;
-    color:var(--navy);
-  }
-  .section-subtitle{
-    text-align:center;
-    color:var(--muted);
-    font-size:17px;
-    max-width:600px;
-    margin:0 auto 50px;
-  }
+  /* ===== SECTION SHELLS ===== */
+  section{padding:64px 0;position:relative;}
+  .section-head{margin-bottom:36px;text-align:left;}
+  .section-head.center{text-align:center;}
+  .section-head h2{font-size:clamp(28px,6vw,38px);font-weight:600;line-height:1.15;color:var(--navy);margin:10px 0 14px;}
+  .section-head p{font-size:15.5px;color:var(--muted);line-height:1.6;max-width:480px;}
+  .section-head.center p{margin-left:auto;margin-right:auto;}
+  .eyebrow-dark{color:var(--gold);}
 
-  /* What to expect */
-  .expect-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:24px;
-  }
-  .expect-card{
-    background:#fff;
-    border-radius:14px;
-    padding:28px 26px;
-    box-shadow:0 4px 18px rgba(15,31,61,0.06);
-    border:1px solid #ececf3;
-    transition:transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .expect-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 28px rgba(15,31,61,0.12);
-  }
-  .expect-icon{
-    width:46px;height:46px;
-    border-radius:12px;
-    background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  /* ===== ABOUT ===== */
+  .about{background:var(--white);}
+  .about-photo-wrap{position:relative;margin-bottom:32px;border-radius:var(--radius);overflow:hidden;background:var(--navy-2);}
+  .about-photo{
+    aspect-ratio:4/5;width:100%;
+    background:linear-gradient(155deg,#2A3363,#12193A);
     display:flex;align-items:center;justify-content:center;
-    color:var(--gold-light);
-    font-size:20px;
-    margin-bottom:16px;
-  }
-  .expect-card h3{
-    font-size:17px;
-    margin-bottom:8px;
-    color:var(--navy);
-  }
-  .expect-card p{
-    font-size:14.5px;
-    color:var(--muted);
-  }
-
-  /* Pricing */
-  .pricing-section{
-    background:var(--navy);
-    color:#fff;
-  }
-  .pricing-section .section-title, .pricing-section .section-subtitle{color:#fff;}
-  .pricing-section .section-title{font-size:26px;}
-  .pricing-section .section-subtitle{color:rgba(255,255,255,0.75);}
-  .limited-banner{
-    text-align:center;
-    background:rgba(201,164,76,0.15);
-    border:1px solid rgba(201,164,76,0.4);
-    color:var(--gold-light);
-    max-width:480px;
-    margin:0 auto 40px;
-    padding:10px 20px;
-    border-radius:30px;
-    font-size:14px;
-    font-weight:600;
-  }
-  .pricing-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    max-width:760px;
-    margin:0 auto;
-  }
-  .price-card{
-    background:#fff;
-    color:var(--text);
-    border-radius:18px;
-    padding:36px 30px;
-    text-align:center;
     position:relative;
-    box-shadow:0 14px 40px rgba(0,0,0,0.25);
+  }
+  .about-photo .placeholder-txt{
+    color:var(--muted-light);font-size:13px;text-align:center;padding:24px;line-height:1.6;
+  }
+  .about-photo img{
+    width:100%;height:100%;object-fit:cover;
+  }
+  .about-badge{
+    position:absolute;bottom:16px;right:16px;
+    background:var(--gold-light);color:var(--navy);
+    padding:14px 18px;border-radius:14px;
+    text-align:left;
+  }
+  .about-badge .n{font-family:'Fraunces',serif;font-size:20px;font-weight:600;line-height:1;}
+  .about-badge .l{font-size:11.5px;margin-top:3px;}
+  .about-body p{font-size:15.5px;line-height:1.7;color:var(--muted);margin-bottom:16px;}
+  .about-body strong{color:var(--ink);}
+  .about-body p.about-intro{
+    font-family:'Fraunces',serif;font-size:24px;font-weight:600;line-height:1.35;
+    color:var(--navy);margin-bottom:22px;
+  }
+  .checklist{
+    display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;
+  }
+  .checklist li{
+    display:flex;align-items:flex-start;gap:10px;
+    font-size:14.5px;color:var(--ink);font-weight:500;
+  }
+  .checkicon{
+    flex:0 0 auto;width:20px;height:20px;border-radius:50%;
+    background:var(--cream);border:1px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;margin-top:1px;
+  }
+  .checkicon svg{width:11px;height:11px;}
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials{background:var(--cream);}
+  .placeholder-flag{
+    background:#FBF1DD;border:1px dashed var(--gold);color:#7A5B12;
+    font-size:12.5px;padding:10px 14px;border-radius:10px;margin-bottom:24px;line-height:1.5;
+  }
+  .urgency-flag{
+    background:var(--navy);color:var(--white);
+    font-size:14.5px;font-weight:600;text-align:center;
+    padding:16px 20px;border-radius:12px;margin-bottom:32px;line-height:1.5;
+  }
+  .t-cards{display:flex;flex-direction:column;gap:18px;}
+  .t-card{
+    background:var(--white);border-radius:var(--radius);padding:26px 24px;
+    box-shadow:0 1px 2px rgba(18,25,58,0.04);
+  }
+  .stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:14px;}
+  .t-card blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:16.5px;line-height:1.55;color:var(--ink);margin-bottom:18px;}
+  .t-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line-dark);padding-top:14px;}
+  .t-author .name{font-size:14px;font-weight:600;color:var(--ink);}
+  .t-author .role{font-size:12.5px;color:var(--muted);}
+
+  /* ===== PRICING ===== */
+  .pricing{background:var(--white);}
+  .price-cards{display:flex;flex-direction:column;gap:20px;}
+  .price-card{
+    border:1px solid var(--line-dark);border-radius:var(--radius);
+    padding:30px 26px;position:relative;background:var(--cream);
   }
   .price-card.featured{
-    border:2px solid var(--gold);
+    background:var(--navy);color:var(--white);border-color:var(--navy);
   }
-  .price-tag{
-    position:absolute;
-    top:-14px;left:50%;
-    transform:translateX(-50%);
-    background:var(--gold);
-    color:var(--navy);
-    font-size:12px;
-    font-weight:700;
-    padding:5px 14px;
-    border-radius:20px;
-    letter-spacing:0.5px;
+  .price-card .tag{
+    font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:6px;
   }
-  .price-card h3{
-    font-size:20px;
-    color:var(--navy);
-    margin-bottom:4px;
-  }
-  .price-card .price{
-    font-size:42px;
-    font-weight:800;
-    color:var(--navy);
-    margin:14px 0 2px;
-  }
-  .price-card .price span{
-    font-size:15px;
-    font-weight:500;
-    color:var(--muted);
-  }
-  .price-card .desc{
-    color:var(--muted);
-    font-size:14px;
-    margin-bottom:24px;
-  }
-  .price-card ul{
-    list-style:none;
-    text-align:left;
-    margin-bottom:26px;
-  }
-  .price-card ul li{
-    font-size:14.5px;
-    color:var(--text);
-    padding:6px 0;
-    padding-left:24px;
-    position:relative;
-  }
-  .price-card ul li::before{
-    content:"✓";
-    position:absolute;left:0;
-    color:var(--gold);
-    font-weight:700;
-  }
-  .price-card .btn-primary{width:100%;text-align:center;}
+  .price-card.featured .tag{color:var(--gold-light);}
+  .price-card h3{font-size:22px;font-weight:600;margin-bottom:4px;}
+  .price-card .sub{font-size:13.5px;color:var(--muted);margin-bottom:18px;}
+  .price-card.featured .sub{color:var(--muted-light);}
+  .price-amount{font-family:'Fraunces',serif;font-size:40px;font-weight:600;margin-bottom:4px;}
+  .price-amount span{font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:var(--muted);}
+  .price-card.featured .price-amount span{color:var(--muted-light);}
+  .price-desc{font-size:14px;color:var(--muted);line-height:1.55;margin:14px 0 20px;}
+  .price-card.featured .price-desc{color:var(--muted-light);}
+  .price-list{display:flex;flex-direction:column;gap:11px;margin-bottom:24px;}
+  .price-list li{display:flex;gap:9px;align-items:flex-start;font-size:14px;}
+  .price-note{text-align:center;font-size:17px;font-weight:600;color:var(--ink);margin-top:16px;}
 
-  /* Testimonials */
-  .testimonial-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:24px;
-  }
-  .testimonial-card{
-    background:#fff;
-    border-radius:14px;
-    padding:30px;
-    border:1px dashed #d7d9e3;
-    color:var(--muted);
-    font-style:italic;
-    min-height:140px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-  }
-  .testimonial-card .quote-icon{
-    font-size:30px;
-    color:var(--gold);
-    margin-bottom:10px;
-    font-style:normal;
+  /* ===== BOOK ===== */
+  .book{background:var(--navy);color:var(--white);}
+  .book .section-head p{color:var(--muted-light);max-width:460px;}
+  .book-info{display:flex;flex-direction:column;margin-top:8px;}
+  .book-info-row{padding:16px 0;border-top:1px solid var(--line);}
+  .book-info-row:last-child{border-bottom:1px solid var(--line);}
+  .book-info-row .k{font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted-light);margin-bottom:6px;}
+  .book-info-row .v{font-size:15px;font-weight:600;}
+  .calendly-box{
+    margin-top:32px;background:var(--white);border-radius:var(--radius);
+    min-height:340px;display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:13.5px;text-align:center;padding:30px;line-height:1.6;
   }
 
-  /* Why tutoring section */
-  .why-section{
-    background:#fff;
+  /* ===== EXPECT ===== */
+  .expect{background:var(--cream);}
+  .expect-cards{display:flex;flex-direction:column;gap:16px;}
+  .expect-card{
+    background:var(--white);border-radius:var(--radius);padding:26px 24px;
+    border:1px solid var(--line-dark);
   }
-  .why-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+  .expect-icon{
+    width:44px;height:44px;border-radius:12px;background:#F3E7CC;
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
   }
-  .why-points{
-    display:flex;
-    flex-direction:column;
-    gap:22px;
-  }
-  .why-point{
-    display:flex;
-    gap:16px;
-    align-items:flex-start;
-  }
-  .why-point .num{
-    flex-shrink:0;
-    width:38px;height:38px;
-    border-radius:50%;
-    background:var(--navy);
-    color:var(--gold-light);
-    display:flex;align-items:center;justify-content:center;
-    font-weight:700;
-  }
-  .why-point p{
-    color:var(--text);
-    font-size:15.5px;
-  }
-  .why-point strong{color:var(--navy);}
-  .why-cta-box{
-    background:linear-gradient(135deg,var(--navy),var(--navy-light));
-    color:#fff;
-    border-radius:18px;
-    padding:40px 34px;
-    text-align:center;
-  }
-  .why-cta-box h3{
-    font-size:23px;
-    margin-bottom:12px;
-  }
-  .why-cta-box p{
-    color:rgba(255,255,255,0.8);
-    margin-bottom:24px;
-    font-size:15px;
-  }
+  .expect-icon svg{width:20px;height:20px;color:var(--gold);}
+  .expect-card h3{font-size:18px;font-weight:600;margin-bottom:8px;color:var(--ink);}
+  .expect-card p{font-size:14.5px;color:var(--muted);line-height:1.55;}
+  .expect-num{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px;}
+  .expect-cta{text-align:center;margin-top:36px;}
 
-  /* Booking section */
-  .booking-section{
-    background:var(--bg);
-    text-align:center;
-  }
-  .calendly-wrap{
-    max-width:900px;
-    margin:0 auto;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 14px 50px rgba(15,31,61,0.12);
-    border:1px solid #ececf3;
-  }
-  .calendly-inline-widget{
-    min-width:280px;
-    height:680px;
-  }
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy);color:var(--muted-light);padding:32px 0;text-align:center;font-size:13px;border-top:1px solid var(--line);}
+  footer .brand{margin-bottom:8px;justify-content:center;display:flex;}
 
-  /* About */
-  .about-section{
-    background:#fff;
-  }
-  .about-grid{
-    display:grid;
-    grid-template-columns:280px 1fr;
-    gap:50px;
-    align-items:center;
-  }
-  .photo-slot{
-    width:100%;
-    aspect-ratio:1/1;
-    border-radius:18px;
-    background:linear-gradient(135deg,#eceef5,#dde1ec);
-    border:2px dashed #c3c8d6;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    color:var(--muted);
-    font-size:14px;
-    text-align:center;
-    gap:8px;
-  }
-  .photo-slot .icon{font-size:34px;}
-  .about-text h3{
-    font-size:26px;
-    color:var(--navy);
-    margin-bottom:4px;
-  }
-  .about-text .role{
-    color:var(--gold);
-    font-weight:600;
-    margin-bottom:18px;
-    font-size:15px;
-  }
-  .about-text p{
-    color:var(--text);
-    font-size:15.5px;
-    margin-bottom:16px;
-  }
+  /* ===== DESKTOP ===== */
+  @media (min-width:860px){
+    .wrap{padding:0 40px;}
+    .topbar-inner{padding:18px 40px 0;}
+    .brand-cta{display:inline-flex;}
+    .tabs{gap:8px;}
+    .tab{font-size:14px;padding:12px 18px;}
 
-  /* Final CTA */
-  .final-cta{
-    background:var(--navy);
-    color:#fff;
-    text-align:center;
-    padding:80px 0;
-  }
-  .final-cta h2{
-    font-size:32px;
-    margin-bottom:14px;
-  }
-  .final-cta p{
-    color:rgba(255,255,255,0.8);
-    margin-bottom:30px;
-    max-width:520px;
-    margin-left:auto;
-    margin-right:auto;
-  }
+    .hero{padding:80px 0 64px;}
+    .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
+    .hero p.lead{max-width:420px;}
+    .hero-ctas{flex-direction:row;}
+    .hero-visual{
+      aspect-ratio:1/1;border-radius:var(--radius);
+      background:linear-gradient(155deg,#2A3363,#12193A);
+      position:relative;overflow:hidden;
+      display:flex;align-items:center;justify-content:center;
+    }
 
-  footer{
-    background:#0a1530;
-    color:rgba(255,255,255,0.5);
-    text-align:center;
-    padding:26px 0;
-    font-size:13px;
-  }
+    section{padding:96px 0;}
+    .section-head{max-width:640px;}
+    .section-head p{max-width:520px;}
 
-  @media(max-width:760px){
-    .hero h1{font-size:32px;}
-    .why-grid, .about-grid{grid-template-columns:1fr;}
-    .about-grid{text-align:center;}
-    .photo-slot{max-width:240px;margin:0 auto;}
-    .pricing-section .section-title{font-size:19px;}
+    .about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start;}
+    .about-photo-wrap{margin-bottom:0;}
+    .checklist{grid-template-columns:1fr 1fr;}
+
+    .t-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+
+    .price-cards{flex-direction:row;gap:24px;}
+    .price-card{flex:1;}
+
+    .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
+    .calendly-box{margin-top:0;}
+
+    .expect-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  }
+  @media (min-width:1200px){
+    .expect-cards{grid-template-columns:repeat(5,1fr);}
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <div class="logo">Stanway<span>Tutoring</span></div>
-    <a href="#booking" class="btn btn-outline">Book a Free Diagnostic Call</a>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-row">
+      <a href="#" class="brand">Stanway <span>Tutoring</span></a>
+      <a href="#book" class="brand-cta">Book free call</a>
+    </div>
+    <nav class="tabs" id="tabs">
+      <a href="#about" class="tab active">About</a>
+      <a href="#testimonials" class="tab">Testimonials</a>
+      <a href="#book" class="tab">Book a Call</a>
+      <a href="#expect" class="tab">What to Expect</a>
+      <a href="#pricing" class="tab">Pricing</a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="grid-texture"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Maths &amp; Economics Tutor · University of Nottingham</div>
+        <h1>Have your child walk into September <em>confident</em> in Maths.</h1>
+        <p class="lead">Our personalised sessions fill the most important gaps in knowledge and builds genuine confidence to see results before the new term starts.</p>
+        <div class="hero-ctas">
+          <a href="#book" class="btn btn-gold">Book a free consultation</a>
+          <a href="#expect" class="btn btn-outline-light">See what's included</a>
+        </div>
+        <div class="stat-row">
+          <div>
+            <div class="num">5</div>
+            <div class="lbl">sessions in one week</div>
+          </div>
+          <div>
+            <div class="num">22–31 Aug</div>
+            <div class="lbl">this year's intensive week</div>
+          </div>
+          <div>
+            <div class="num">GCSE / A Level</div>
+            <div class="lbl">Year 11 &amp; Year 13 entry</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" style="display:none;"></div>
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container hero-content">
-    <span class="badge">SUMMER 2026 INTENSIVE WEEK NOW OPEN</span>
-    <h1>The tutoring for your child to walk into September <span class="accent">confident</span> in Maths</h1>
-    <p class="subtext">A personalised one-to-one intensive course for students going into Year 11 and Year 13. We start with a free diagnostic call to find exactly what's holding your child back, then build a five session plan around it.</p>
-    <div class="hero-cta">
-      <a href="#booking" class="btn btn-primary">Book Your Free Diagnostic Call</a>
-      <div class="flex-pill">5 personalised sessions, one week, scheduled entirely around you</div>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo-wrap">
+      <div class="about-photo">
+        <img src="https://stanwaytutoring.co.uk/IMG_5877.jpg" alt="John, founder of Stanway Tutoring">
+      </div>
+      <div class="about-badge">
+        <div class="n">2026</div>
+        <div class="l">Nottingham Maths &amp; Econ</div>
+      </div>
+    </div>
+    <div class="about-body">
+      <div class="eyebrow eyebrow-dark">About Me</div>
+      <p class="about-intro">Hi. I'm John, and I study maths and economics at the University of Nottingham.</p>
+      <p>At the end of Year 12, my predicted grades were below the offer I needed for university. However, once I realised how to study efficiently and effectively, I ended up achieving four A stars in maths, further maths, English and geography, and I got into my first choice university.</p>
+      <p>My approach is simple. I meet every student where they are to build genuine confidence. Each session is calm, structured, and always focused on your child.</p>
+      <ul class="checklist">
+        <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Maths &amp; Economics, University of Nottingham</li>
+        <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>GCSE to A Level</li>
+        <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>1 to 1 sessions, fully personalised</li>
+        <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Enhanced DBS checked</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section id="expect">
-  <div class="container">
-    <h2 class="section-title">What to Expect</h2>
-    <p class="section-subtitle">A personalised 5 session programme designed to close specific gaps and build genuine confidence for your child before exam year.</p>
-    <div class="expect-grid">
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow eyebrow-dark">Parent &amp; Student Stories</div>
+      <h2>Hear what some of our parents have to say.</h2>
+    </div>
+    <div class="placeholder-flag">These three testimonials are placeholders written for a one week intensive. Replace with real quotes once you've delivered your first cohort — your existing ones describe long term tutoring, not this format, so they shouldn't go up as-is.</div>
+    <div class="t-cards">
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"By the end of the week it felt like my son actually understood the topics he'd been avoiding all year. We really appreciatet the intensive week and hope to continue working with John throughout the year."</blockquote>
+        <div class="t-author">
+          <div>
+            <div class="name">Sarah Whitmore</div>
+            <div class="role">Parent of Year 11 student</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"John explained everything in a way that helped me understand. Although it was only 5 sessions, it always felt like I was learning."</blockquote>
+        <div class="t-author">
+          <div>
+            <div class="name">Emily</div>
+            <div class="role">Year 13 student</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"John was flexible and adaptable. The sessions addressed the topics he needed and also included plenty of exam practice. The online sessions suited our son as he could complete the sessions how he was comfortable. Highly recommend!"</blockquote>
+        <div class="t-author">
+          <div>
+            <div class="name">Lisa</div>
+            <div class="role">Parent of Year 11 student</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK A CALL -->
+<section class="book" id="book">
+  <div class="grid-texture"></div>
+  <div class="wrap book-grid" style="position:relative;">
+    <div>
+      <div class="section-head" style="margin-bottom:0;">
+        <div class="eyebrow">Book a Call</div>
+        <h2 style="color:#fff;">Ready to close the gaps</h2>
+        <p>Book a free 15 minute consultation. I'll ask a few questions to see where your child is at, and we'll figure out together if the intensive week is the right fit. No pressure, and no commitment.</p>
+      </div>
+      <div class="book-info">
+        <div class="book-info-row">
+          <div class="k">Subject</div>
+          <div class="v">Maths</div>
+        </div>
+        <div class="book-info-row">
+          <div class="k">Levels covered</div>
+          <div class="v">GCSE (Year 10 &amp; 11) · A Level (Year 12 &amp; 13)</div>
+        </div>
+        <div class="book-info-row">
+          <div class="k">Session format</div>
+          <div class="v">Online, 1 to 1</div>
+        </div>
+      </div>
+    </div>
+    <div class="calendly-box">
+      [ Calendly booking embed goes here ]
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect" id="expect">
+  <div class="grid-texture dark-on-light"></div>
+  <div class="wrap" style="position:relative;">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="eyebrow eyebrow-dark">What to Expect</div>
+      <h2>Five sessions. One clear plan.</h2>
+      <p>Exactly what you will receive from us when you sign up to our intensive week.</p>
+    </div>
+    <div class="expect-cards">
       <div class="expect-card">
-        <div class="expect-icon">⏱</div>
-        <h3>5 Hours of Individually Tailored Sessions</h3>
-        <p>One-to-one time entirely dedicated to closing the specific gaps identified in your diagnostic call.</p>
+        <div class="expect-num">01</div>
+        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35" stroke-linecap="round"/></svg></div>
+        <h3>Initial consultation</h3>
+        <p>We build a plan tailored around your child's specific gaps rather than having a fixed curriculum.</p>
       </div>
       <div class="expect-card">
-        <div class="expect-icon">📩</div>
-        <h3>Parent Updates and Feedback</h3>
-        <p>Receive a detailed summary to know exactly where things stand with exam feedback and what the plan is moving onto the next session.</p>
+        <div class="expect-num">02</div>
+        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M21 8l-4 3 4 3V8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Live 1 to 1 sessions</h3>
+        <p>5 personal sessions built entirely around your summer plans to build momentum heading into the new term.</p>
       </div>
       <div class="expect-card">
-        <div class="expect-icon">✅</div>
-        <h3>Topic Confidence Checklist</h3>
-        <p>A clear, visual breakdown of strong topics and areas still needing attention.</p>
+        <div class="expect-num">03</div>
+        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Regular parent updates</h3>
+        <p>Receive a detailed summary to know exactly where things stand and what the plan is moving onto the next session.</p>
       </div>
       <div class="expect-card">
-        <div class="expect-icon">📦</div>
-        <h3>Personalised Resource Packs</h3>
-        <p>Tailored notes and practice materials built around each student's specification and areas that need improvement.</p>
+        <div class="expect-num">04</div>
+        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 012-2h13v16H6a2 2 0 01-2-2.5z"/><path d="M19 17H6a2 2 0 100 4h13" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Personalised resource packs</h3>
+        <p>A topic confidence checklist alongside tailored notes and practice materials built around each student's areas for improvement.</p>
       </div>
       <div class="expect-card">
-        <div class="expect-icon">🎯</div>
-        <h3>September Action Plan</h3>
+        <div class="expect-num">05</div>
+        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>September action plan</h3>
         <p>A clear plan at the end of the week so momentum carries straight into the new term.</p>
       </div>
     </div>
+    <div class="expect-cta">
+      <a href="#book" class="btn btn-navy">Book a free consultation</a>
+    </div>
   </div>
 </section>
 
-<section class="pricing-section" id="pricing">
-  <div class="container">
-    <h2 class="section-title">One week. All features included. One price.</h2>
-    <div class="limited-banner">⚡ The best times are going to go quick, book early to secure your preferred time</div>
-    <div class="pricing-grid">
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="eyebrow eyebrow-dark">Pricing</div>
+      <h2>One week. All features included. One price.</h2>
+    </div>
+    <div class="urgency-flag">I'm keeping this year's intake small to give each student proper attention, so book now to guarantee your spot.</div>
+    <div class="price-cards">
       <div class="price-card">
-        <h3>GCSE (Year 11)</h3>
-        <div class="price">£125 <span>/ 5 session week</span></div>
-        <p class="desc">Intensive week for students heading into Year 11</p>
-        <ul>
-          <li>5 hours of 1-to-1 tutoring</li>
-          <li>Free diagnostic call &amp; personalised plan</li>
-          <li>Parent updates after each session</li>
-          <li>Exam feedback &amp; resource packs</li>
-          <li>September action plan</li>
+        <div class="tag">GCSE</div>
+        <h3>Year 10 &amp; 11 Intensive</h3>
+        <div class="sub">For students doing their GCSEs</div>
+        <div class="price-amount">£125 <span>one week</span></div>
+        <p class="price-desc">Built for Year 10 and Year 11 students who want gaps closed before term starts.</p>
+        <ul class="price-list">
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Free consultation</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>5 x 60 min 1 to 1 sessions</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Personalised session plan</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Targeted practice resources</li>
         </ul>
-        <a href="#booking" class="btn btn-primary">Book a Free Diagnostic Call</a>
+        <a href="#book" class="btn btn-navy btn-block">Book free consultation</a>
       </div>
       <div class="price-card featured">
-        <div class="price-tag">A-LEVEL</div>
-        <h3>A Level (Year 13)</h3>
-        <div class="price">£175 <span>/ 5 session week</span></div>
-        <p class="desc">Intensive week for students heading into Year 13</p>
-        <ul>
-          <li>5 hours of 1-to-1 tutoring</li>
-          <li>Free diagnostic call &amp; personalised plan</li>
-          <li>Parent updates after each session</li>
-          <li>Exam feedback &amp; resource packs</li>
-          <li>September action plan</li>
+        <div class="tag">A Level</div>
+        <h3>Year 12 &amp; 13 Intensive</h3>
+        <div class="sub">For students doing their A Levels</div>
+        <div class="price-amount">£175 <span>one week</span></div>
+        <p class="price-desc">Built for Year 12 and Year 13 students who need the foundations solid before the harder content lands.</p>
+        <ul class="price-list">
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Free consultation</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>5 x 60 min 1 to 1 sessions</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Personalised session plan</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Targeted practice resources</li>
         </ul>
-        <a href="#booking" class="btn btn-primary">Book a Free Diagnostic Call</a>
+        <a href="#book" class="btn btn-gold btn-block">Book free consultation</a>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="testimonials">
-  <div class="container">
-    <h2 class="section-title">What Parents Are Saying</h2>
-    <p class="section-subtitle">Real feedback from families we've worked with.</p>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <div class="quote-icon">"</div>
-        <p>Going into year 13, my daughter had a few gaps in her knowledge, holding back her grades. John was able to solidify her understanding, giving her more confidence going into her exams. We really appreciate the sessions.</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="quote-icon">"</div>
-        <p>John tutored my son for the whole of year 11. My son had been up and down sets for years and he was not confident about his GCSE. The sessions addressed the topics he needed and also included plenty of exam practice. My son's confidence grew with each session and he went into his GCSE fully prepared and confident.</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="quote-icon">"</div>
-        <p>John was flexible and adaptable throughout, taking on extra sessions on the run up to mocks and exams. The online sessions suited our son as he could complete the sessions how he was comfortable. Highly recommend!</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="about-section">
-  <div class="container">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-grid">
-      <div class="photo-slot">
-        <img src="IMG_5877.jpg" alt="John" style="width:100%;height:100%;object-fit:cover;border-radius:16px;display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div style="display:none;flex-direction:column;align-items:center;gap:8px;">
-          <div class="icon">📷</div>
-          <div>Photo of John<br>(insert here)</div>
-        </div>
-      </div>
-      <div class="about-text">
-        <h3>John</h3>
-        <p>My name is John, I study Maths and Economics at the University of Nottingham and I am a tutor specialised in boosting the exam results of students aged 14–18.</p>
-        <p>At the end of my Year 12, my predicted grades were below the offer I needed for university. However, once I realised how to study efficiently and effectively, I ended up achieving 4 A*s in Maths, Further Maths, English and Geography, and I got into my first-choice university.</p>
-        <p>I started StanwayTutoring to help students develop a strong understanding of mathematical concepts which can then combine with these exam techniques and study methods.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="booking-section" id="booking">
-  <div class="container">
-    <h2 class="section-title">Book Your Free Diagnostic Call</h2>
-    <p class="section-subtitle">Pick a time that works for you — no commitment required. We'll talk through exactly where your child's gaps are and what a five session week would cover.</p>
-    <div class="calendly-wrap">
-      <div class="calendly-inline-widget" data-url="https://calendly.com/stanwaytutoring1/new-meeting" style="min-width:280px;height:680px;"></div>
-    </div>
-  </div>
-</section>
-
-<section class="final-cta">
-  <div class="container">
-    <h2>Spots for the summer are limited</h2>
-    <p>Secure your child's place now and head into September with a clear plan and real confidence.</p>
-    <a href="#booking" class="btn btn-primary">Book Your Free Diagnostic Call</a>
+    <p class="price-note">Prefer ongoing support through the year? Ask about continuing 1 to 1 sessions after your intensive week.</p>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    © 2026 StanwayTutoring. All rights reserved.
+  <div class="wrap">
+    <div class="brand">Stanway <span style="color:var(--gold);">Tutoring</span></div>
+    <div>1 to 1 Maths intensives for GCSE &amp; A Level · Online</div>
   </div>
 </footer>
 
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const sections = ['about','testimonials','book','expect','pricing'].map(id => document.getElementById(id));
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const id = entry.target.id;
+        tabs.forEach(t => {
+          t.classList.toggle('active', t.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+  sections.forEach(s => { if(s) observer.observe(s); });
+</script>
 
 </body>
 </html>
