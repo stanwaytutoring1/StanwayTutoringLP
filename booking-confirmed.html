@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1026910739974066');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Booking Confirmed — Stanway Tutoring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#12193A;
+    --navy-2:#1B2447;
+    --cream:#F6F3EC;
+    --gold:#E8B84B;
+    --gold-soft: rgba(232,184,75,0.14);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{ height:100%; }
+
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--navy);
+    color:var(--cream);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding:24px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* subtle radial glow behind the mark */
+  body::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:900px;
+    height:900px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, var(--gold-soft) 0%, transparent 65%);
+    pointer-events:none;
+  }
+
+  .card{
+    position:relative;
+    max-width:560px;
+    width:100%;
+    text-align:center;
+  }
+
+  .mark{
+    width:56px;
+    height:56px;
+    margin:0 auto 32px;
+    border-radius:50%;
+    border:1.5px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    animation:appear 0.6s ease-out;
+  }
+
+  .mark svg{
+    width:22px;
+    height:22px;
+    stroke:var(--gold);
+  }
+
+  @keyframes appear{
+    from{ opacity:0; transform:scale(0.8); }
+    to{ opacity:1; transform:scale(1); }
+  }
+
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(32px, 5vw, 44px);
+    line-height:1.15;
+    margin-bottom:20px;
+  }
+
+  h1 em{
+    font-style:italic;
+    color:var(--gold);
+  }
+
+  p.lede{
+    font-size:17px;
+    line-height:1.65;
+    color:rgba(246,243,236,0.78);
+    max-width:440px;
+    margin:0 auto 40px;
+  }
+
+  .next-steps{
+    text-align:left;
+    background:var(--navy-2);
+    border:1px solid rgba(232,184,75,0.18);
+    border-radius:12px;
+    padding:28px 30px;
+    margin-bottom:36px;
+  }
+
+  .next-steps h2{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:15px;
+    letter-spacing:0.02em;
+    color:var(--gold);
+    margin-bottom:16px;
+  }
+
+  .next-steps ol{
+    list-style:none;
+    counter-reset:step;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .next-steps li{
+    counter-increment:step;
+    display:flex;
+    gap:14px;
+    font-size:15px;
+    line-height:1.5;
+    color:rgba(246,243,236,0.85);
+  }
+
+  .next-steps li::before{
+    content:counter(step);
+    flex-shrink:0;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:var(--gold-soft);
+    color:var(--gold);
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:1px;
+  }
+
+  .footnote{
+    font-size:13px;
+    color:rgba(246,243,236,0.5);
+  }
+
+  .footnote a{
+    color:var(--gold);
+    text-decoration:none;
+    border-bottom:1px solid rgba(232,184,75,0.4);
+  }
+
+  .footnote a:hover{
+    border-bottom-color:var(--gold);
+  }
+
+  @media (max-width:480px){
+    .next-steps{ padding:22px 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .mark{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+
+    <div class="eyebrow">Call Confirmed</div>
+
+    <h1>You're booked in for<br><em>your free consultation</em></h1>
+
+    <p class="lede">
+      A calendar invite is on its way to your inbox with a link to join. If you can't find it in a minute or two, check spam and it should turn up there.
+    </p>
+
+    <div class="next-steps">
+      <h2>What happens next</h2>
+      <ol>
+        <li>You'll get a confirmation email from Koalendar with the call details and a link to reschedule if you need to.</li>
+        <li>On the call, we'll talk through where your child is now, what's getting in the way, and whether the intensive week is the right fit.</li>
+      </ol>
+    </div>
+
+    <p class="footnote">
+      Need to change something before then? Just reply to the confirmation email.<br>
+      <a href="https://stanwaytutoring.co.uk">Back to Stanway Tutoring</a>
+    </p>
+  </div>
+
+</body>
+</html>
