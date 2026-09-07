@@ -2,25 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1026910739974066');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stanway Tutoring — 1 to 1 Maths Intensive</title>
+<title>Stanway Tutoring: Weekly 1 to 1 Maths Tutoring</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -205,6 +188,9 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
     display:flex;align-items:center;justify-content:center;margin-top:1px;
   }
   .checkicon svg{width:11px;height:11px;}
+  .teaching-style{margin-top:30px;padding-top:26px;border-top:1px solid var(--line-dark);}
+  .teaching-style h3{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:10px;}
+  .teaching-style p{font-size:14.5px;line-height:1.7;color:var(--muted);margin-bottom:0;}
 
   /* ===== TESTIMONIALS ===== */
   .testimonials{background:var(--cream);}
@@ -230,6 +216,27 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
 
   /* ===== PRICING ===== */
   .pricing{background:var(--white);}
+
+  /* ===== CONTACT ===== */
+  .contact{background:var(--cream);}
+  .contact-form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;}
+  .form-row{display:flex;flex-direction:column;gap:16px;}
+  .contact-form label{
+    display:flex;flex-direction:column;gap:6px;
+    font-size:13px;font-weight:600;color:var(--ink);
+  }
+  .contact-form input,
+  .contact-form textarea{
+    font-family:'Inter',sans-serif;font-size:14.5px;font-weight:400;
+    padding:12px 14px;border-radius:10px;border:1px solid var(--line-dark);
+    background:var(--white);color:var(--ink);resize:vertical;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus{outline:none;border-color:var(--gold);}
+  .contact-form button{align-self:flex-start;margin-top:4px;}
+  .form-status{font-size:13.5px;font-weight:600;margin-top:4px;min-height:18px;}
+  .form-status.success{color:#2E7D4F;}
+  .form-status.error{color:#B3441E;}
   .price-cards{display:flex;flex-direction:column;gap:20px;}
   .price-card{
     border:1px solid var(--line-dark);border-radius:var(--radius);
@@ -251,6 +258,20 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
   .price-card.featured .price-amount span{color:var(--muted-light);}
   .price-desc{font-size:14px;color:var(--muted);line-height:1.55;margin:14px 0 20px;}
   .price-card.featured .price-desc{color:var(--muted-light);}
+  .freq-table{
+    border:1px solid var(--line-dark);border-radius:12px;overflow:hidden;margin-bottom:22px;
+  }
+  .price-card.featured .freq-table{border-color:var(--line);}
+  .freq-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:10px 14px;font-size:13.5px;
+  }
+  .freq-row:first-child{border-bottom:1px solid var(--line-dark);}
+  .price-card.featured .freq-row:first-child{border-bottom-color:var(--line);}
+  .freq-row span{color:var(--muted);}
+  .price-card.featured .freq-row span{color:var(--muted-light);}
+  .freq-row strong{color:var(--ink);font-weight:600;}
+  .price-card.featured .freq-row strong{color:var(--white);}
   .price-list{display:flex;flex-direction:column;gap:11px;margin-bottom:24px;}
   .price-list li{display:flex;gap:9px;align-items:flex-start;font-size:14px;}
   .price-note{text-align:center;font-size:17px;font-weight:600;color:var(--ink);margin-top:16px;}
@@ -264,9 +285,7 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
   .book-info-row .k{font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted-light);margin-bottom:6px;}
   .book-info-row .v{font-size:15px;font-weight:600;}
   .calendly-box{
-    margin-top:32px;background:var(--white);border-radius:var(--radius);
-    min-height:340px;display:flex;align-items:center;justify-content:center;
-    color:var(--muted);font-size:13.5px;text-align:center;padding:30px;line-height:1.6;
+    margin-top:32px;border-radius:var(--radius);overflow:hidden;
   }
 
   /* ===== EXPECT ===== */
@@ -325,10 +344,13 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
     .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
     .calendly-box{margin-top:0;}
 
+    .form-row{flex-direction:row;}
+    .form-row label{flex:1;}
+
     .expect-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   }
   @media (min-width:1200px){
-    .expect-cards{grid-template-columns:repeat(5,1fr);}
+    .expect-cards{grid-template-columns:repeat(3,1fr);}
   }
 </style>
 </head>
@@ -356,25 +378,25 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
   <div class="wrap hero-inner">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow">Maths Tutor · University of Nottingham</div>
-        <h1>Have your child walk into September <em>confident</em> in Maths.</h1>
-        <p class="lead">Our personalised sessions fill the most important gaps in knowledge and builds genuine confidence to see results before the new term starts.</p>
+        <div class="eyebrow">Maths &amp; Economics Tutor · University of Nottingham</div>
+        <h1>Consistent 1 to 1 Maths tutoring that builds lasting <em>confidence</em>.</h1>
+        <p class="lead">Online individual sessions to close any gaps and reinforce understanding which builds confidence over time. The first session is completely free.</p>
         <div class="hero-ctas">
-          <a href="#book" class="btn btn-gold">Book a free consultation</a>
+          <a href="#book" class="btn btn-gold">Book your first free session</a>
           <a href="#expect" class="btn btn-outline-light">See what's included</a>
         </div>
         <div class="stat-row">
           <div>
-            <div class="num">5</div>
-            <div class="lbl">sessions in one week</div>
+            <div class="num">1 or 2</div>
+            <div class="lbl">sessions per week</div>
           </div>
           <div>
-            <div class="num">22–31 Aug</div>
-            <div class="lbl">this year's intensive week</div>
+            <div class="num">Free</div>
+            <div class="lbl">first session, no commitment</div>
           </div>
           <div>
             <div class="num">GCSE / A Level</div>
-            <div class="lbl">Year 11 &amp; Year 13 entry</div>
+            <div class="lbl">Year 10 to Year 13</div>
           </div>
         </div>
       </div>
@@ -388,11 +410,11 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
   <div class="wrap about-grid">
     <div class="about-photo-wrap">
       <div class="about-photo">
-        <img src="https://stanwaytutoring.co.uk/IMG_6216.jpg" alt="John, founder of Stanway Tutoring">
+        <img src="https://stanwaytutoring.co.uk/IMG_5877.jpg" alt="John, founder of Stanway Tutoring">
       </div>
       <div class="about-badge">
-        <div class="n">2026</div>
-        <div class="l">Nottingham Maths &amp; Econ</div>
+        <div class="n">Weekly</div>
+        <div class="l">1 to 1 tutoring</div>
       </div>
     </div>
     <div class="about-body">
@@ -406,6 +428,10 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
         <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>1 to 1 sessions, fully personalised</li>
         <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Enhanced DBS checked</li>
       </ul>
+      <div class="teaching-style">
+        <h3>My Teaching Style</h3>
+        <p>I take real time to get to know each student, because no two people learn maths the same way. Sessions are patient and adaptive: I listen closely, notice where something isn't quite clicking, and I'm happy to explain it a few different ways until it does. I'd rather a student ask five "silly" questions than nod along not understanding, so building that comfort matters just as much as the maths itself. I only move on once a concept has genuinely landed, not just been ticked off, and I try to guide students toward working things out for themselves rather than handing over answers, with steady encouragement throughout so their confidence grows alongside their ability.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -417,38 +443,40 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
       <div class="eyebrow eyebrow-dark">Parent &amp; Student Stories</div>
       <h2>Hear what some of our parents have to say.</h2>
     </div>
+    <div class="placeholder-flag">These three testimonials are placeholders reflecting the new ongoing weekly model. Since the model has switched back to ongoing tutoring, your existing live site testimonials should actually fit this format well, so it's worth pulling those across instead of using these.</div>
     <div class="t-cards">
       <div class="t-card">
         <div class="stars">★★★★★</div>
-        <blockquote>"By the end of the week it felt like my son actually understood the topics he'd been avoiding all year. We really appreciatet the intensive week and hope to continue working with John throughout the year."</blockquote>
+        <blockquote>"John was flexible and adaptable. The sessions addressed the topics he needed and also included plenty of exam practice. The online sessions suited our son as he could complete the sessions how he was comfortable. Highly recommend."</blockquote>
         <div class="t-author">
           <div>
-            <div class="name">Peter</div>
+            <div class="name">Sarah</div>
             <div class="role">Parent of Year 11 student</div>
           </div>
         </div>
       </div>
       <div class="t-card">
         <div class="stars">★★★★★</div>
-        <blockquote>"John explained everything in a way that helped me understand. Although it was only 5 sessions, it always felt like I was learning."</blockquote>
+        <blockquote>"[Placeholder] We know exactly what's being covered every fortnight and what's coming next. It feels like a proper partnership rather than just booking a tutor."</blockquote>
         <div class="t-author">
           <div>
-            <div class="name">Emily</div>
-            <div class="role">Year 13 student</div>
+            <div class="name">David</div>
+            <div class="role">Parent of Year 13 student</div>
           </div>
         </div>
       </div>
       <div class="t-card">
         <div class="stars">★★★★★</div>
-        <blockquote>"John was flexible and adaptable. The sessions addressed the topics he needed and also included plenty of exam practice. The online sessions suited our son as he could complete the sessions how he was comfortable. Highly recommend!"</blockquote>
+        <blockquote>"[Placeholder] John explains things a few different ways until they actually click. Having the same session every week means nothing ever gets forgotten between terms."</blockquote>
         <div class="t-author">
           <div>
-            <div class="name">Lisa</div>
-            <div class="role">Parent of Year 11 student</div>
+            <div class="name">Megan</div>
+            <div class="role">A Level student, Year 13</div>
           </div>
         </div>
       </div>
     </div>
+    <div class="urgency-flag">I'm keeping my intake small to give each student proper attention, so book now to guarantee your spot.</div>
   </div>
 </section>
 
@@ -459,13 +487,13 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
     <div>
       <div class="section-head" style="margin-bottom:0;">
         <div class="eyebrow">Book a Call</div>
-        <h2 style="color:#fff;">Ready to close the gaps</h2>
-        <p>Book a free 15 minute consultation. I'll ask a few questions to see where your child is at, and we'll figure out together if the intensive week is the right fit. No pressure, and no commitment.</p>
+        <h2 style="color:#fff;">Ready to start weekly tutoring?</h2>
+        <p>Book your child's free first session with me. I'll get to know how they learn, see where they're at, and we'll figure out together if weekly tutoring is the right fit, with no pressure and no commitment.</p>
       </div>
       <div class="book-info">
         <div class="book-info-row">
           <div class="k">Subject</div>
-          <div class="v">Maths</div>
+          <div class="v">Maths and Further Maths</div>
         </div>
         <div class="book-info-row">
           <div class="k">Levels covered</div>
@@ -473,20 +501,20 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
         </div>
         <div class="book-info-row">
           <div class="k">Session format</div>
-          <div class="v">Online, 1 to 1</div>
+          <div class="v">Online, 1 to 1, weekly</div>
+        </div>
+        <div class="book-info-row">
+          <div class="k">Frequency</div>
+          <div class="v">1 or 2 sessions per week</div>
+        </div>
+        <div class="book-info-row">
+          <div class="k">First session</div>
+          <div class="v">Completely free</div>
         </div>
       </div>
     </div>
-    <div class="calendly-box">
-
-<!-- Koalendar Inline Embed Start -->
-<div id="inline-widget-free-consultation-93"></div>
-<script>window.Koalendar=window.Koalendar||function(){(Koalendar.props=Koalendar.props||[]).push(arguments)};</script>
-<script async src="https://koalendar.com/assets/widget.js"></script>
-<script>Koalendar('inline', {"url":"https://koalendar.com/e/free-consultation-93","selector":"#inline-widget-free-consultation-93"});</script>
-<!-- Koalendar Inline Embed End -->
-
-    </div>
+    <div class="calendly-box calendly-inline-widget" data-url="https://calendly.com/stanwaytutoring1/new-meeting" style="min-width:320px;height:700px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   </div>
 </section>
 
@@ -496,43 +524,43 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
   <div class="wrap" style="position:relative;">
     <div class="section-head center" style="margin-left:auto;margin-right:auto;">
       <div class="eyebrow eyebrow-dark">What to Expect</div>
-      <h2>Five sessions. One clear plan.</h2>
-      <p>Exactly what you will receive from us when you sign up to our intensive week.</p>
+      <h2>Consistent support, every step of the way.</h2>
+      <p>Exactly what you will receive from us as part of your ongoing weekly tutoring.</p>
     </div>
     <div class="expect-cards">
       <div class="expect-card">
         <div class="expect-num">01</div>
-        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35" stroke-linecap="round"/></svg></div>
-        <h3>Initial consultation</h3>
-        <p>We build a plan tailored around your child's specific gaps rather than having a fixed curriculum.</p>
+        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Free first session</h3>
+        <p>Your child's first hour with me is completely free, so I can assess their understanding, see how they learn, and plan our approach, with no charge and no commitment.</p>
       </div>
       <div class="expect-card">
         <div class="expect-num">02</div>
         <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M21 8l-4 3 4 3V8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Live 1 to 1 sessions</h3>
-        <p>5 personal sessions built entirely around your summer plans to build momentum heading into the new term.</p>
+        <h3>Weekly 1 to 1 sessions</h3>
+        <p>Consistent, one hour sessions every week, with 1 or 2 sessions per week depending on what your child needs.</p>
       </div>
       <div class="expect-card">
         <div class="expect-num">03</div>
-        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Regular parent updates</h3>
-        <p>Receive a detailed summary to know exactly where things stand and what the plan is moving onto the next session.</p>
+        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>An evolving action plan</h3>
+        <p>A living plan that's reviewed and adjusted regularly as your child progresses, rather than a fixed one-off syllabus.</p>
       </div>
       <div class="expect-card">
         <div class="expect-num">04</div>
         <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 012-2h13v16H6a2 2 0 01-2-2.5z"/><path d="M19 17H6a2 2 0 100 4h13" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Personalised resource packs</h3>
-        <p>A topic confidence checklist alongside tailored notes and practice materials built around each student's areas for improvement.</p>
+        <p>Topic confidence checklists alongside tailored notes and practice materials, built around each student's areas for improvement.</p>
       </div>
       <div class="expect-card">
         <div class="expect-num">05</div>
-        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>September action plan</h3>
-        <p>A clear plan at the end of the week so momentum carries straight into the new term.</p>
+        <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Biweekly parent updates</h3>
+        <p>A clear update every two weeks on what's been covered, progress made, and what still needs attention.</p>
       </div>
     </div>
     <div class="expect-cta">
-      <a href="#book" class="btn btn-navy">Book a free consultation</a>
+      <a href="#book" class="btn btn-navy">Book your first free session</a>
     </div>
   </div>
 </section>
@@ -542,47 +570,80 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
   <div class="wrap">
     <div class="section-head center" style="margin-left:auto;margin-right:auto;">
       <div class="eyebrow eyebrow-dark">Pricing</div>
-      <h2>One week. All features included. One price.</h2>
+      <h2>Simple monthly pricing, based on your sessions.</h2>
+      <p>Ongoing weekly tutoring, billed monthly according to how many sessions you would like each week. Your first session is completely free.</p>
     </div>
-    <div class="urgency-flag">I'm keeping this year's intake small to give each student proper attention, so book now to guarantee your spot.</div>
     <div class="price-cards">
       <div class="price-card">
         <div class="tag">GCSE</div>
-        <h3>Year 10 &amp; 11 Intensive</h3>
-        <div class="sub">For students doing their GCSEs</div>
-        <div class="price-amount">£125 <span>one week</span></div>
-        <p class="price-desc">Built for Year 10 and Year 11 students who want gaps closed before term starts.</p>
+        <h3>GCSE Maths Tutoring</h3>
+        <div class="sub">Year 10 &amp; Year 11</div>
+        <div class="price-amount">£25 <span>per session</span></div>
+        <p class="price-desc">Ongoing weekly 1 to 1 sessions, billed monthly based on your chosen frequency.</p>
+        <div class="freq-table">
+          <div class="freq-row"><span>1 session / week</span><strong>≈ £100/month</strong></div>
+          <div class="freq-row"><span>2 sessions / week</span><strong>≈ £200/month</strong></div>
+        </div>
         <ul class="price-list">
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Free consultation</li>
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>5 x 60 min 1 to 1 sessions</li>
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Personalised session plan</li>
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Targeted practice resources</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>First session completely free</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>60 min 1 to 1 sessions, weekly</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Resource packs &amp; topic checklists</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Biweekly parent updates</li>
         </ul>
-        <a href="#book" class="btn btn-navy btn-block">Book free consultation</a>
+        <a href="#book" class="btn btn-navy btn-block">Book your first free session</a>
       </div>
       <div class="price-card featured">
         <div class="tag">A Level</div>
-        <h3>Year 12 &amp; 13 Intensive</h3>
-        <div class="sub">For students doing their A Levels</div>
-        <div class="price-amount">£175 <span>one week</span></div>
-        <p class="price-desc">Built for Year 12 and Year 13 students who need the foundations solid before the harder content lands.</p>
+        <h3>A Level Maths Tutoring</h3>
+        <div class="sub">Year 12 &amp; Year 13</div>
+        <div class="price-amount">£35 <span>per session</span></div>
+        <p class="price-desc">Ongoing weekly 1 to 1 sessions, billed monthly based on your chosen frequency.</p>
+        <div class="freq-table">
+          <div class="freq-row"><span>1 session / week</span><strong>≈ £140/month</strong></div>
+          <div class="freq-row"><span>2 sessions / week</span><strong>≈ £280/month</strong></div>
+        </div>
         <ul class="price-list">
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Free consultation</li>
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>5 x 60 min 1 to 1 sessions</li>
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Personalised session plan</li>
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Targeted practice resources</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>First session completely free</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>60 min 1 to 1 sessions, weekly</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Resource packs &amp; topic checklists</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Biweekly parent updates</li>
         </ul>
-        <a href="#book" class="btn btn-gold btn-block">Book free consultation</a>
+        <a href="#book" class="btn btn-gold btn-block">Book your first free session</a>
       </div>
     </div>
-    <p class="price-note">Prefer ongoing support through the year? Ask about continuing 1 to 1 sessions after your intensive week.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="eyebrow eyebrow-dark">Questions</div>
+      <h2>Still have a question?</h2>
+      <p>Send a quick message and I'll get back to you personally.</p>
+    </div>
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/myeynlrb" method="POST">
+      <div class="form-row">
+        <label>Name
+          <input type="text" name="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+      </div>
+      <label>Message
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+      <button type="submit" class="btn btn-navy" id="contactSubmit">Send message</button>
+      <p class="form-status" id="contactStatus" role="status"></p>
+    </form>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="brand">Stanway <span style="color:var(--gold);">Tutoring</span></div>
-    <div>1 to 1 Maths intensives for GCSE &amp; A Level · Online</div>
+    <div>1 to 1 weekly Maths tutoring for GCSE &amp; A Level · Online</div>
   </div>
 </footer>
 
@@ -609,6 +670,39 @@ src="https://www.facebook.com/tr?id=1026910739974066&ev=PageView&noscript=1"
   }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
 
   sections.forEach(s => { if(s) observer.observe(s); });
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('contactSubmit');
+      const status = document.getElementById('contactStatus');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      status.textContent = '';
+      status.className = 'form-status';
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          status.textContent = "Thanks, your message has been sent. I'll get back to you soon.";
+          status.classList.add('success');
+          contactForm.reset();
+          submitBtn.textContent = 'Send message';
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (err) {
+        status.textContent = "Something went wrong sending that. Please try again, or email stanwaytutoring1@gmail.com directly.";
+        status.classList.add('error');
+        submitBtn.textContent = 'Send message';
+      }
+      submitBtn.disabled = false;
+    });
+  }
 </script>
 
 </body>
