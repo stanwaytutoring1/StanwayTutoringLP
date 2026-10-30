@@ -3,141 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stanway Tutoring: Weekly 1 to 1 Maths Tutoring</title>
+<title>Stanway Tutoring: Free Diagnostic Test and Weekly 1 to 1 Maths Tutoring</title>
+<meta name="description" content="Get a completely free maths diagnostic test and personalised report. Weekly 1 to 1 online GCSE and A Level maths tutoring. No commitment.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --navy:#12193A;
-    --navy-2:#1B2447;
-    --cream:#F6F3EC;
-    --white:#FFFFFF;
-    --gold:#C0973B;
-    --gold-light:#E4C88A;
-    --ink:#1E2333;
-    --muted:#666F82;
-    --muted-light:#9AA1B5;
-    --line:rgba(255,255,255,0.12);
-    --line-dark:rgba(18,25,58,0.1);
-    --radius:18px;
-    --maxw:1100px;
-  }
+  :root{--navy:#12193A;--navy-2:#1B2447;--cream:#F6F3EC;--white:#FFFFFF;--gold:#C0973B;--gold-light:#E4C88A;--ink:#1E2333;--muted:#666F82;--muted-light:#9AA1B5;--line:rgba(255,255,255,0.12);--line-dark:rgba(18,25,58,0.1);--radius:18px;--maxw:1100px;}
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter',sans-serif;
-    color:var(--ink);
-    background:var(--cream);
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   h1,h2,h3,.serif{font-family:'Fraunces',serif;}
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
   a{text-decoration:none;color:inherit;}
   ul{list-style:none;}
+  .grid-texture{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.045) 1px,transparent 1px);background-size:34px 34px;pointer-events:none;}
+  .grid-texture.dark-on-light{background-image:linear-gradient(rgba(18,25,58,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(18,25,58,0.05) 1px,transparent 1px);}
 
-  /* Grid texture signature element */
-  .grid-texture{
-    position:absolute;inset:0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
-    background-size:34px 34px;
-    pointer-events:none;
-  }
-  .grid-texture.dark-on-light{
-    background-image:
-      linear-gradient(rgba(18,25,58,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(18,25,58,0.05) 1px, transparent 1px);
-  }
-
-  /* ===== NAV ===== */
-  .topbar{
-    position:sticky;top:0;z-index:100;
-    background:var(--navy);
-    border-bottom:1px solid var(--line);
-  }
-  .topbar-inner{
-    max-width:var(--maxw);margin:0 auto;padding:16px 20px 0;
-  }
+  /* NAV */
+  .topbar{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--line);}
+  .topbar-inner{max-width:var(--maxw);margin:0 auto;padding:16px 20px 0;}
   .brand-row{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;}
-  .brand{
-    font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--white);
-    letter-spacing:0.2px;
-  }
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--white);letter-spacing:0.2px;}
   .brand span{color:var(--gold);}
-  .brand-cta{
-    display:none;
-    font-size:13px;font-weight:600;color:var(--navy);
-    background:var(--gold-light);padding:9px 16px;border-radius:100px;
-  }
-  .tabs{
-    display:flex;gap:4px;overflow-x:auto;
-    scrollbar-width:none;
-    -ms-overflow-style:none;
-    padding-bottom:0;
-  }
+  .brand-cta{display:none;font-size:13px;font-weight:600;color:var(--navy);background:var(--gold-light);padding:9px 16px;border-radius:100px;}
+  .tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
   .tabs::-webkit-scrollbar{display:none;}
-  .tab{
-    flex:0 0 auto;
-    font-size:13.5px;font-weight:500;color:var(--muted-light);
-    padding:10px 14px;white-space:nowrap;
-    border-bottom:2px solid transparent;
-    transition:color .15s ease, border-color .15s ease;
-  }
+  .tab{flex:0 0 auto;font-size:13.5px;font-weight:500;color:var(--muted-light);padding:10px 14px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease;}
   .tab:hover{color:var(--white);}
   .tab.active{color:var(--white);border-bottom-color:var(--gold);}
 
-  /* ===== BUTTONS ===== */
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    font-family:'Inter',sans-serif;font-weight:600;font-size:15px;
-    padding:14px 24px;border-radius:100px;
-    border:1px solid transparent;cursor:pointer;
-    transition:transform .15s ease, opacity .15s ease;
-  }
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;padding:14px 24px;border-radius:100px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,opacity .15s ease;}
   .btn:active{transform:scale(0.97);}
+  .btn:disabled{opacity:.6;cursor:default;}
   .btn-gold{background:var(--gold-light);color:var(--navy);}
   .btn-outline-light{border-color:var(--line);color:var(--white);}
   .btn-navy{background:var(--navy);color:var(--white);}
   .btn-block{width:100%;}
 
-  /* ===== HERO ===== */
-  .hero{
-    position:relative;
-    background:var(--navy);
-    color:var(--white);
-    padding:52px 0 44px;
-    overflow:hidden;
-  }
+  /* HERO */
+  .hero{position:relative;background:var(--navy);color:var(--white);padding:52px 0 44px;overflow:hidden;}
   .hero-inner{position:relative;z-index:1;}
-  .eyebrow{
-    font-size:12px;font-weight:700;letter-spacing:1.6px;
-    color:var(--gold-light);text-transform:uppercase;margin-bottom:16px;
-  }
-  .hero h1{
-    font-size:clamp(34px, 8vw, 48px);
-    line-height:1.08;font-weight:600;
-    margin-bottom:18px;
-  }
-  .hero h1 em{
-    font-style:italic;font-weight:500;color:var(--gold-light);
-  }
-  .hero p.lead{
-    font-size:16.5px;line-height:1.6;color:var(--muted-light);
-    max-width:480px;margin-bottom:28px;
-  }
-  .hero-ctas{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
-  .stat-row{
-    display:grid;grid-template-columns:repeat(3,1fr);
-    border-top:1px solid var(--line);padding-top:24px;gap:12px;
-  }
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:1.6px;color:var(--gold-light);text-transform:uppercase;margin-bottom:16px;}
+  .hero h1{font-size:clamp(34px,8vw,48px);line-height:1.08;font-weight:600;margin-bottom:18px;}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--gold-light);}
+  .hero p.lead{font-size:16.5px;line-height:1.6;color:var(--muted-light);max-width:480px;margin-bottom:28px;}
+  .hero-ctas{display:flex;flex-direction:column;gap:12px;margin-bottom:12px;}
+  .no-commit{font-size:13.5px;font-weight:600;color:var(--gold-light);margin-bottom:36px;}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:24px;gap:12px;}
   .stat-row .num{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--white);line-height:1.15;}
   .stat-row .lbl{font-size:12.5px;color:var(--muted-light);margin-top:4px;line-height:1.35;}
 
-  /* ===== SECTION SHELLS ===== */
+  /* SECTIONS */
   section{padding:64px 0;position:relative;}
   .section-head{margin-bottom:36px;text-align:left;}
   .section-head.center{text-align:center;}
@@ -146,109 +65,53 @@
   .section-head.center p{margin-left:auto;margin-right:auto;}
   .eyebrow-dark{color:var(--gold);}
 
-  /* ===== ABOUT ===== */
+  /* ABOUT */
   .about{background:var(--white);}
   .about-photo-wrap{position:relative;margin-bottom:32px;border-radius:var(--radius);overflow:hidden;background:var(--navy-2);}
-  .about-photo{
-    aspect-ratio:4/5;width:100%;
-    background:linear-gradient(155deg,#2A3363,#12193A);
-    display:flex;align-items:center;justify-content:center;
-    position:relative;
-  }
-  .about-photo .placeholder-txt{
-    color:var(--muted-light);font-size:13px;text-align:center;padding:24px;line-height:1.6;
-  }
-  .about-photo img{
-    width:100%;height:100%;object-fit:cover;
-  }
-  .about-badge{
-    position:absolute;bottom:16px;right:16px;
-    background:var(--gold-light);color:var(--navy);
-    padding:14px 18px;border-radius:14px;
-    text-align:left;
-  }
+  .about-photo{aspect-ratio:4/5;width:100%;background:linear-gradient(155deg,#2A3363,#12193A);display:flex;align-items:center;justify-content:center;position:relative;}
+  .about-photo img{width:100%;height:100%;object-fit:cover;}
+  .about-badge{position:absolute;bottom:16px;right:16px;background:var(--gold-light);color:var(--navy);padding:14px 18px;border-radius:14px;text-align:left;}
   .about-badge .n{font-family:'Fraunces',serif;font-size:20px;font-weight:600;line-height:1;}
   .about-badge .l{font-size:11.5px;margin-top:3px;}
   .about-body p{font-size:15.5px;line-height:1.7;color:var(--muted);margin-bottom:16px;}
-  .about-body strong{color:var(--ink);}
-  .about-body p.about-intro{
-    font-family:'Fraunces',serif;font-size:24px;font-weight:600;line-height:1.35;
-    color:var(--navy);margin-bottom:22px;
-  }
-  .checklist{
-    display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;
-  }
-  .checklist li{
-    display:flex;align-items:flex-start;gap:10px;
-    font-size:14.5px;color:var(--ink);font-weight:500;
-  }
-  .checkicon{
-    flex:0 0 auto;width:20px;height:20px;border-radius:50%;
-    background:var(--cream);border:1px solid var(--gold);
-    display:flex;align-items:center;justify-content:center;margin-top:1px;
-  }
+  .about-body p.about-intro{font-family:'Fraunces',serif;font-size:24px;font-weight:600;line-height:1.35;color:var(--navy);margin-bottom:22px;}
+  .checklist{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;}
+  .checklist li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink);font-weight:500;}
+  .checkicon{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--cream);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin-top:1px;}
   .checkicon svg{width:11px;height:11px;}
-  .teaching-style{margin-top:30px;padding-top:26px;border-top:1px solid var(--line-dark);}
-  .teaching-style h3{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:10px;}
-  .teaching-style p{font-size:14.5px;line-height:1.7;color:var(--muted);margin-bottom:0;}
 
-  /* ===== TESTIMONIALS ===== */
+  /* TESTIMONIALS */
   .testimonials{background:var(--cream);}
-  .placeholder-flag{
-    background:#FBF1DD;border:1px dashed var(--gold);color:#7A5B12;
-    font-size:12.5px;padding:10px 14px;border-radius:10px;margin-bottom:24px;line-height:1.5;
-  }
-  .urgency-flag{
-    background:var(--navy);color:var(--white);
-    font-size:14.5px;font-weight:600;text-align:center;
-    padding:16px 20px;border-radius:12px;margin-bottom:32px;line-height:1.5;
-  }
+  .urgency-flag{background:var(--navy);color:var(--white);font-size:14.5px;font-weight:600;text-align:center;padding:16px 20px;border-radius:12px;margin-bottom:32px;line-height:1.5;}
   .t-cards{display:flex;flex-direction:column;gap:18px;}
-  .t-card{
-    background:var(--white);border-radius:var(--radius);padding:26px 24px;
-    box-shadow:0 1px 2px rgba(18,25,58,0.04);
-  }
+  .t-card{background:var(--white);border-radius:var(--radius);padding:26px 24px;box-shadow:0 1px 2px rgba(18,25,58,0.04);}
   .stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:14px;}
   .t-card blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:16.5px;line-height:1.55;color:var(--ink);margin-bottom:18px;}
-  .t-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line-dark);padding-top:14px;}
+  .t-author{border-top:1px solid var(--line-dark);padding-top:14px;}
   .t-author .name{font-size:14px;font-weight:600;color:var(--ink);}
   .t-author .role{font-size:12.5px;color:var(--muted);}
 
-  /* ===== PRICING ===== */
-  .pricing{background:var(--white);}
+  /* EXPECT */
+  .expect{background:var(--cream);}
+  .expect-cards{display:flex;flex-direction:column;gap:16px;}
+  .expect-card{background:var(--white);border-radius:var(--radius);padding:26px 24px;border:1px solid var(--line-dark);}
+  .expect-card.highlight{background:var(--navy);border-color:var(--navy);}
+  .expect-card.highlight h3{color:var(--white);}
+  .expect-card.highlight p{color:var(--muted-light);}
+  .expect-icon{width:44px;height:44px;border-radius:12px;background:#F3E7CC;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .expect-icon svg{width:20px;height:20px;color:var(--gold);}
+  .expect-card h3{font-size:18px;font-weight:600;margin-bottom:8px;color:var(--ink);}
+  .expect-card p{font-size:14.5px;color:var(--muted);line-height:1.55;}
+  .expect-num{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px;}
+  .expect-cta{text-align:center;margin-top:36px;}
+  .expect-cta .small{font-size:13px;color:var(--muted);margin-top:10px;font-weight:500;}
 
-  /* ===== CONTACT ===== */
-  .contact{background:var(--cream);}
-  .contact-form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;}
-  .form-row{display:flex;flex-direction:column;gap:16px;}
-  .contact-form label{
-    display:flex;flex-direction:column;gap:6px;
-    font-size:13px;font-weight:600;color:var(--ink);
-  }
-  .contact-form input,
-  .contact-form textarea{
-    font-family:'Inter',sans-serif;font-size:14.5px;font-weight:400;
-    padding:12px 14px;border-radius:10px;border:1px solid var(--line-dark);
-    background:var(--white);color:var(--ink);resize:vertical;
-  }
-  .contact-form input:focus,
-  .contact-form textarea:focus{outline:none;border-color:var(--gold);}
-  .contact-form button{align-self:flex-start;margin-top:4px;}
-  .form-status{font-size:13.5px;font-weight:600;margin-top:4px;min-height:18px;}
-  .form-status.success{color:#2E7D4F;}
-  .form-status.error{color:#B3441E;}
+  /* PRICING */
+  .pricing{background:var(--white);}
   .price-cards{display:flex;flex-direction:column;gap:20px;}
-  .price-card{
-    border:1px solid var(--line-dark);border-radius:var(--radius);
-    padding:30px 26px;position:relative;background:var(--cream);
-  }
-  .price-card.featured{
-    background:var(--navy);color:var(--white);border-color:var(--navy);
-  }
-  .price-card .tag{
-    font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-    color:var(--gold);margin-bottom:6px;
-  }
+  .price-card{border:1px solid var(--line-dark);border-radius:var(--radius);padding:30px 26px;position:relative;background:var(--cream);}
+  .price-card.featured{background:var(--navy);color:var(--white);border-color:var(--navy);}
+  .price-card .tag{font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
   .price-card.featured .tag{color:var(--gold-light);}
   .price-card h3{font-size:22px;font-weight:600;margin-bottom:4px;}
   .price-card .sub{font-size:13.5px;color:var(--muted);margin-bottom:18px;}
@@ -258,14 +121,9 @@
   .price-card.featured .price-amount span{color:var(--muted-light);}
   .price-desc{font-size:14px;color:var(--muted);line-height:1.55;margin:14px 0 20px;}
   .price-card.featured .price-desc{color:var(--muted-light);}
-  .freq-table{
-    border:1px solid var(--line-dark);border-radius:12px;overflow:hidden;margin-bottom:22px;
-  }
+  .freq-table{border:1px solid var(--line-dark);border-radius:12px;overflow:hidden;margin-bottom:22px;}
   .price-card.featured .freq-table{border-color:var(--line);}
-  .freq-row{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:10px 14px;font-size:13.5px;
-  }
+  .freq-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;font-size:13.5px;}
   .freq-row:first-child{border-bottom:1px solid var(--line-dark);}
   .price-card.featured .freq-row:first-child{border-bottom-color:var(--line);}
   .freq-row span{color:var(--muted);}
@@ -274,83 +132,37 @@
   .price-card.featured .freq-row strong{color:var(--white);}
   .price-list{display:flex;flex-direction:column;gap:11px;margin-bottom:24px;}
   .price-list li{display:flex;gap:9px;align-items:flex-start;font-size:14px;}
-  .price-note{text-align:center;font-size:17px;font-weight:600;color:var(--ink);margin-top:16px;}
 
-  /* ===== BOOK ===== */
-  .book{background:var(--navy);color:var(--white);}
-  .book .section-head p{color:var(--muted-light);max-width:460px;}
-  .book-info{display:flex;flex-direction:column;margin-top:8px;}
-  .book-info-row{padding:16px 0;border-top:1px solid var(--line);}
-  .book-info-row:last-child{border-bottom:1px solid var(--line);}
-  .book-info-row .k{font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted-light);margin-bottom:6px;}
-  .book-info-row .v{font-size:15px;font-weight:600;}
-  .calendly-box{
-    margin-top:32px;border-radius:var(--radius);overflow:hidden;
-  }
+  /* FREE TEST FORM */
+  .get-test{background:var(--navy);color:var(--white);}
+  .get-test .section-head h2{color:var(--white);}
+  .get-test .section-head p{color:var(--muted-light);}
+  .form-embed{max-width:640px;margin:0 auto;background:var(--white);border-radius:var(--radius);overflow:hidden;padding-bottom:16px;}
+  .form-embed iframe{display:block;width:100%;min-height:900px;border:0;}
+  .form-embed .form-note{padding-top:12px;font-size:13px;color:var(--muted);text-align:center;font-weight:500;}
 
-  /* ===== EXPECT ===== */
-  .expect{background:var(--cream);}
-  .expect-cards{display:flex;flex-direction:column;gap:16px;}
-  .expect-card{
-    background:var(--white);border-radius:var(--radius);padding:26px 24px;
-    border:1px solid var(--line-dark);
-  }
-  .expect-icon{
-    width:44px;height:44px;border-radius:12px;background:#F3E7CC;
-    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
-  }
-  .expect-icon svg{width:20px;height:20px;color:var(--gold);}
-  .expect-card h3{font-size:18px;font-weight:600;margin-bottom:8px;color:var(--ink);}
-  .expect-card p{font-size:14.5px;color:var(--muted);line-height:1.55;}
-  .expect-num{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px;}
-  .expect-cta{text-align:center;margin-top:36px;}
-
-  /* ===== FOOTER ===== */
+  /* FOOTER */
   footer{background:var(--navy);color:var(--muted-light);padding:32px 0;text-align:center;font-size:13px;border-top:1px solid var(--line);}
   footer .brand{margin-bottom:8px;justify-content:center;display:flex;}
 
-  /* ===== DESKTOP ===== */
   @media (min-width:860px){
     .wrap{padding:0 40px;}
     .topbar-inner{padding:18px 40px 0;}
     .brand-cta{display:inline-flex;}
     .tabs{gap:8px;}
     .tab{font-size:14px;padding:12px 18px;}
-
     .hero{padding:80px 0 64px;}
-    .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
-    .hero p.lead{max-width:420px;}
     .hero-ctas{flex-direction:row;}
-    .hero-visual{
-      aspect-ratio:1/1;border-radius:var(--radius);
-      background:linear-gradient(155deg,#2A3363,#12193A);
-      position:relative;overflow:hidden;
-      display:flex;align-items:center;justify-content:center;
-    }
-
     section{padding:96px 0;}
     .section-head{max-width:640px;}
     .section-head p{max-width:520px;}
-
     .about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start;}
     .about-photo-wrap{margin-bottom:0;}
     .checklist{grid-template-columns:1fr 1fr;}
-
     .t-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-
     .price-cards{flex-direction:row;gap:24px;}
     .price-card{flex:1;}
-
-    .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
-    .calendly-box{margin-top:0;}
-
-    .form-row{flex-direction:row;}
-    .form-row label{flex:1;}
-
     .expect-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  }
-  @media (min-width:1200px){
-    .expect-cards{grid-template-columns:repeat(3,1fr);}
   }
 </style>
 </head>
@@ -360,14 +172,14 @@
   <div class="topbar-inner">
     <div class="brand-row">
       <a href="#" class="brand">Stanway <span>Tutoring</span></a>
-      <a href="#book" class="brand-cta">Book free call</a>
+      <a href="#get-test" class="brand-cta">Free diagnostic test</a>
     </div>
     <nav class="tabs" id="tabs">
       <a href="#about" class="tab active">About</a>
       <a href="#testimonials" class="tab">Testimonials</a>
-      <a href="#book" class="tab">Book a Call</a>
       <a href="#expect" class="tab">What to Expect</a>
       <a href="#pricing" class="tab">Pricing</a>
+      <a href="#get-test" class="tab">Free Test</a>
     </nav>
   </div>
 </div>
@@ -376,31 +188,27 @@
 <header class="hero">
   <div class="grid-texture"></div>
   <div class="wrap hero-inner">
-    <div class="hero-grid">
+    <div class="eyebrow">Maths Tutor · University of Nottingham</div>
+    <h1>Give your child the <em>confidence</em> to succeed in maths</h1>
+    <p class="lead">Discover the topics that need more work with a completely free diagnostic test and personalised report showing the steps to improve.</p>
+    <div class="hero-ctas">
+      <a href="#get-test" class="btn btn-gold">Get your free diagnostic test</a>
+      <a href="#expect" class="btn btn-outline-light">See what's included</a>
+    </div>
+    <div class="no-commit">No commitment. No payment details. No pressure.</div>
+    <div class="stat-row">
       <div>
-        <div class="eyebrow">Maths &amp; Economics Tutor · University of Nottingham</div>
-        <h1>Consistent 1 to 1 Maths tutoring that builds lasting <em>confidence</em>.</h1>
-        <p class="lead">Online individual sessions to close any gaps and reinforce understanding which builds confidence over time. The first session is completely free.</p>
-        <div class="hero-ctas">
-          <a href="#book" class="btn btn-gold">Book your first free session</a>
-          <a href="#expect" class="btn btn-outline-light">See what's included</a>
-        </div>
-        <div class="stat-row">
-          <div>
-            <div class="num">1 or 2</div>
-            <div class="lbl">sessions per week</div>
-          </div>
-          <div>
-            <div class="num">Free</div>
-            <div class="lbl">first session, no commitment</div>
-          </div>
-          <div>
-            <div class="num">GCSE / A Level</div>
-            <div class="lbl">Year 10 to Year 13</div>
-          </div>
-        </div>
+        <div class="num">1 or 2</div>
+        <div class="lbl">sessions per week</div>
       </div>
-      <div class="hero-visual" style="display:none;"></div>
+      <div>
+        <div class="num">Free</div>
+        <div class="lbl">diagnostic test, no commitment</div>
+      </div>
+      <div>
+        <div class="num">GCSE / A Level</div>
+        <div class="lbl">Year 10 to Year 13</div>
+      </div>
     </div>
   </div>
 </header>
@@ -443,73 +251,20 @@
       <div class="t-card">
         <div class="stars">★★★★★</div>
         <blockquote>"John tutored my son for the whole of year 11. My son had been up and down sets for years and he was not confident about his GCSE.  The sessions addressed the topics he needed and also included plenty of exam questions practice.  My son's confidence grew with each session and he went into his GCSE fully prepared and confident. Highly recommend!."</blockquote>
-        <div class="t-author">
-          <div>
-            <div class="name">Sarah</div>
-            <div class="role">Parent of Year 11 student</div>
-          </div>
-        </div>
+        <div class="t-author"><div class="name">Sarah</div><div class="role">Parent of Year 11 student</div></div>
       </div>
       <div class="t-card">
         <div class="stars">★★★★★</div>
         <blockquote>"I was worried that I would not meet my university offer but after having lessons with John I felt much more confident and I managed to get the A that I needed for university. I'm very excited to start and really appreciate everything John did to help."</blockquote>
-        <div class="t-author">
-          <div>
-            <div class="name">Zach</div>
-            <div class="role">Recent Year 13 student</div>
-          </div>
-        </div>
+        <div class="t-author"><div class="name">Zach</div><div class="role">Recent Year 13 student</div></div>
       </div>
       <div class="t-card">
         <div class="stars">★★★★★</div>
         <blockquote>"No one prepares students for the jump between GCSE and A level, without John's consistent tutoring and patient teaching our daughter would not have done as well as she did in his mocks. We are looking forward to continue working with John this year."</blockquote>
-        <div class="t-author">
-          <div>
-            <div class="name">Megan</div>
-            <div class="role">Parent of Year 12 student</div>
-          </div>
-        </div>
+        <div class="t-author"><div class="name">Megan</div><div class="role">Parent of Year 12 student</div></div>
       </div>
     </div>
-    <div class="urgency-flag">I'm keeping my intake small to give each student proper attention, so book now to guarantee your spot.</div>
-  </div>
-</section>
-
-<!-- BOOK A CALL -->
-<section class="book" id="book">
-  <div class="grid-texture"></div>
-  <div class="wrap book-grid" style="position:relative;">
-    <div>
-      <div class="section-head" style="margin-bottom:0;">
-        <div class="eyebrow">Book a Call</div>
-        <h2 style="color:#fff;">Ready to start weekly tutoring?</h2>
-        <p>Book your child's free first session with me. I'll get to know how they learn, see where they're at, and we'll figure out together if weekly tutoring is the right fit, with no pressure and no commitment.</p>
-      </div>
-      <div class="book-info">
-        <div class="book-info-row">
-          <div class="k">Subject</div>
-          <div class="v">Maths and Further Maths</div>
-        </div>
-        <div class="book-info-row">
-          <div class="k">Levels covered</div>
-          <div class="v">GCSE (Year 10 &amp; 11) · A Level (Year 12 &amp; 13)</div>
-        </div>
-        <div class="book-info-row">
-          <div class="k">Session format</div>
-          <div class="v">Online, 1 to 1, weekly</div>
-        </div>
-        <div class="book-info-row">
-          <div class="k">Frequency</div>
-          <div class="v">1 or 2 sessions per week</div>
-        </div>
-        <div class="book-info-row">
-          <div class="k">First session</div>
-          <div class="v">Completely free</div>
-        </div>
-      </div>
-    </div>
-    <div class="calendly-box calendly-inline-widget" data-url="https://calendly.com/stanwaytutoring1/new-meeting" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <div class="urgency-flag" style="margin-top:32px;margin-bottom:0;">I'm keeping my intake small to give each student proper attention, so get your free diagnostic test now to guarantee your spot.</div>
   </div>
 </section>
 
@@ -523,11 +278,11 @@
       <p>Exactly what you will receive from us as part of your ongoing weekly tutoring.</p>
     </div>
     <div class="expect-cards">
-      <div class="expect-card">
+      <div class="expect-card highlight">
         <div class="expect-num">01</div>
         <div class="expect-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Free first session</h3>
-        <p>Your child's first hour with me is completely free, so I can assess their understanding, see how they learn, and plan our approach, with no charge and no commitment.</p>
+        <h3>Free diagnostic test</h3>
+        <p>Get a marked diagnostic test alongside a full report so that you can understand your child's strengths and weaknesses.</p>
       </div>
       <div class="expect-card">
         <div class="expect-num">02</div>
@@ -555,7 +310,8 @@
       </div>
     </div>
     <div class="expect-cta">
-      <a href="#book" class="btn btn-navy">Book your first free session</a>
+      <a href="#get-test" class="btn btn-navy">Get your free diagnostic test</a>
+      <div class="small">No commitment</div>
     </div>
   </div>
 </section>
@@ -566,7 +322,7 @@
     <div class="section-head center" style="margin-left:auto;margin-right:auto;">
       <div class="eyebrow eyebrow-dark">Pricing</div>
       <h2>Simple monthly pricing, based on your sessions.</h2>
-      <p>Ongoing weekly tutoring, billed monthly according to how many sessions you would like each week. Your first session is completely free.</p>
+      <p>Ongoing weekly tutoring, billed monthly according to how many sessions you would like each week. Your diagnostic test is completely free.</p>
     </div>
     <div class="price-cards">
       <div class="price-card">
@@ -580,12 +336,12 @@
           <div class="freq-row"><span>2 sessions / week</span><strong>≈ £200/month</strong></div>
         </div>
         <ul class="price-list">
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>First session completely free</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Free diagnostic test and report</li>
           <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>60 min 1 to 1 sessions, weekly</li>
           <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Resource packs &amp; topic checklists</li>
           <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#C0973B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Biweekly parent updates</li>
         </ul>
-        <a href="#book" class="btn btn-navy btn-block">Book your first free session</a>
+        <a href="#get-test" class="btn btn-navy btn-block">Get your free diagnostic test</a>
       </div>
       <div class="price-card featured">
         <div class="tag">A Level</div>
@@ -598,40 +354,30 @@
           <div class="freq-row"><span>2 sessions / week</span><strong>≈ £280/month</strong></div>
         </div>
         <ul class="price-list">
-          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>First session completely free</li>
+          <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Free diagnostic test and report</li>
           <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>60 min 1 to 1 sessions, weekly</li>
           <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Resource packs &amp; topic checklists</li>
           <li><span class="checkicon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke="#E4C88A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Biweekly parent updates</li>
         </ul>
-        <a href="#book" class="btn btn-gold btn-block">Book your first free session</a>
+        <a href="#get-test" class="btn btn-gold btn-block">Get your free diagnostic test</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap">
+<!-- FREE DIAGNOSTIC TEST FORM -->
+<section class="get-test" id="get-test">
+  <div class="grid-texture"></div>
+  <div class="wrap" style="position:relative;">
     <div class="section-head center" style="margin-left:auto;margin-right:auto;">
-      <div class="eyebrow eyebrow-dark">Questions</div>
-      <h2>Still have a question?</h2>
-      <p>Send a quick message and I'll get back to you personally.</p>
+      <div class="eyebrow">Free Diagnostic Test</div>
+      <h2>Get your free diagnostic test</h2>
+      <p>Tell me a little about your child and I'll send over their test. You'll receive it marked, with a full personalised report. No commitment.</p>
     </div>
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/myeynlrb" method="POST">
-      <div class="form-row">
-        <label>Name
-          <input type="text" name="name" required>
-        </label>
-        <label>Email
-          <input type="email" name="email" required>
-        </label>
-      </div>
-      <label>Message
-        <textarea name="message" rows="4" required></textarea>
-      </label>
-      <button type="submit" class="btn btn-navy" id="contactSubmit">Send message</button>
-      <p class="form-status" id="contactStatus" role="status"></p>
-    </form>
+    <div class="form-embed">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfzqDB5GArmbKFZMvWzBsSAITbU3GRrT1QeTVkLKefkWiGEeA/viewform?embedded=true" width="100%" height="900" title="Free diagnostic test form" loading="lazy">Loading…</iframe>
+      <p class="form-note">No commitment. No payment details needed.</p>
+    </div>
   </div>
 </section>
 
@@ -644,7 +390,7 @@
 
 <script>
   const tabs = document.querySelectorAll('.tab');
-  const sections = ['about','testimonials','book','expect','pricing'].map(id => document.getElementById(id));
+  const sections = ['about','testimonials','expect','pricing','get-test'].map(id => document.getElementById(id));
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -655,49 +401,13 @@
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+      if (entry.isIntersecting) {
         const id = entry.target.id;
-        tabs.forEach(t => {
-          t.classList.toggle('active', t.getAttribute('href') === '#' + id);
-        });
+        tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + id));
       }
     });
   }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-
-  sections.forEach(s => { if(s) observer.observe(s); });
-
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const submitBtn = document.getElementById('contactSubmit');
-      const status = document.getElementById('contactStatus');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      status.textContent = '';
-      status.className = 'form-status';
-      try {
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          status.textContent = "Thanks, your message has been sent. I'll get back to you soon.";
-          status.classList.add('success');
-          contactForm.reset();
-          submitBtn.textContent = 'Send message';
-        } else {
-          throw new Error('Submission failed');
-        }
-      } catch (err) {
-        status.textContent = "Something went wrong sending that. Please try again, or email stanwaytutoring1@gmail.com directly.";
-        status.classList.add('error');
-        submitBtn.textContent = 'Send message';
-      }
-      submitBtn.disabled = false;
-    });
-  }
+  sections.forEach(s => { if (s) observer.observe(s); });
 </script>
 
 </body>
